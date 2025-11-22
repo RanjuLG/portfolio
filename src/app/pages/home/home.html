@@ -3,7 +3,7 @@
   <section class="hero section">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-text animate-fade-in-up">
+        <div class="hero-text" data-aos="fade-up">
           <p class="hero-greeting">Hi, I'm</p>
           <h1 class="hero-name text-gradient">{{ name }}</h1>
           <h2 class="hero-role">{{ role }}</h2>
@@ -18,7 +18,7 @@
               </svg>
               View Projects
             </a>
-            <a href="/Ranju_Gamage_Resume.pdf" download class="btn btn-secondary">
+            <a href="/Ranju_Gamage_Resume.pdf" download class="btn btn-secondary" (click)="trackResumeDownload()">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
               </svg>
@@ -45,7 +45,7 @@
           </div>
         </div>
         
-        <div class="hero-image animate-fade-in">
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
           <div class="image-placeholder">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
               <circle cx="100" cy="100" r="80" fill="url(#gradient1)"/>
@@ -65,7 +65,7 @@
   <!-- Introduction Section -->
   <section class="introduction section-sm">
     <div class="container">
-      <div class="intro-card card animate-slide-in-left">
+      <div class="intro-card card" data-aos="fade-up">
         <div class="intro-icon">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#grad2)" stroke="url(#grad2)" stroke-width="2"/>

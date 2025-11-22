@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,10 @@ export class NavbarComponent {
   protected readonly name = 'Ranju Gamage';
   protected readonly role = 'Full-Stack Developer';
 
-  constructor(protected themeService: ThemeService) {}
+  constructor(
+    protected themeService: ThemeService,
+    private analyticsService: AnalyticsService
+  ) {}
 
   toggleMenu() {
     this.isMenuOpen.update(value => !value);
@@ -27,5 +31,9 @@ export class NavbarComponent {
 
   toggleTheme() {
     this.themeService.toggleTheme();
+  }
+
+  trackResumeDownload() {
+    this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (Sidebar)');
   }
 }

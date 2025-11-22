@@ -1,40 +1,29 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home';
-import { AboutComponent } from './pages/about/about';
-import { ProjectsComponent } from './pages/projects/projects';
-import { ProjectDetailComponent } from './pages/project-detail/project-detail';
-import { ContactComponent } from './pages/contact/contact';
 
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    title: 'Ranju Gamage - Full-Stack Developer'
+    loadComponent: () => import('./pages/home/home').then(m => m.HomeComponent)
   },
   {
     path: 'about',
-    component: AboutComponent,
-    title: 'About - Ranju Gamage'
+    loadComponent: () => import('./pages/about/about').then(m => m.AboutComponent)
   },
   {
     path: 'projects',
-    component: ProjectsComponent,
-    title: 'Projects - Ranju Gamage'
+    loadComponent: () => import('./pages/projects/projects').then(m => m.ProjectsComponent)
   },
   {
     path: 'projects/:id',
-    component: ProjectDetailComponent,
-    title: 'Project Details - Ranju Gamage'
+    loadComponent: () => import('./pages/project-detail/project-detail').then(m => m.ProjectDetailComponent)
   },
   {
     path: 'contact',
-    component: ContactComponent,
-    title: 'Contact - Ranju Gamage'
+    loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent)
   },
   {
     path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
+    loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent)
   }
 ];
 

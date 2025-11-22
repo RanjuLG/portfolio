@@ -1,7 +1,7 @@
 <div class="projects-page">
   <section class="projects-header section">
     <div class="container">
-      <div class="section-header animate-fade-in-up">
+      <div class="section-header" data-aos="fade-down">
         <h1 class="section-title text-gradient">My Projects</h1>
         <p class="section-subtitle">Explore my latest work and side projects</p>
       </div>
@@ -34,7 +34,7 @@
       } @else {
         <div class="projects-grid">
           @for (project of projects(); track project.id) {
-            <div class="project-card card" (click)="viewProject(project.id)">
+            <div class="project-card card" (click)="viewProject(project.id)" data-aos="fade-up" [attr.data-aos-delay]="100 * $index">
               <div class="project-image">
                 @if (project.thumbnailUrl) {
                   <img [src]="project.thumbnailUrl" [alt]="project.name">

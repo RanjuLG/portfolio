@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '../../services/analytics.service';
+import { SeoService } from '../../services/seo.service';
 
 interface Skill {
   category: string;
@@ -20,6 +22,20 @@ interface TimelineItem {
   styleUrl: './about.css'
 })
 export class AboutComponent {
+  constructor(
+    private analyticsService: AnalyticsService,
+    private seoService: SeoService
+  ) {
+    this.seoService.updateMetaTags({
+      title: 'About Me',
+      description: 'Learn about my background, skills, and experience as a Full-Stack Developer.',
+      slug: 'about'
+    });
+  }
+
+  trackResumeDownload() {
+    this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
+  }
   protected readonly introduction = `I'm a passionate Full-Stack Developer with expertise in building robust web and mobile applications. With a strong foundation in both frontend and backend technologies, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [

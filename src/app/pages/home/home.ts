@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '../../services/analytics.service';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -31,4 +33,19 @@ export class HomeComponent {
       icon: 'M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'
     }
   ];
+
+  constructor(
+    private analyticsService: AnalyticsService,
+    private seoService: SeoService
+  ) {
+    this.seoService.updateMetaTags({
+      title: 'Home',
+      description: 'Full-Stack Developer specializing in .NET and Angular. Building exceptional digital experiences.',
+      slug: ''
+    });
+  }
+
+  trackResumeDownload() {
+    this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (Home)');
+  }
 }
