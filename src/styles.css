@@ -16,10 +16,10 @@
 }
 
 :root {
-  /* Color Palette - Vibrant & Modern */
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
+  /* Color Palette - Electric Blue Theme */
+  --primary: #007BFF; /* Electric Blue - Light Mode */
+  --primary-dark: #0056b3;
+  --primary-light: #3395ff;
 
   --secondary: #ec4899;
   --secondary-dark: #db2777;
@@ -28,13 +28,13 @@
   --accent: #14b8a6;
   --accent-dark: #0d9488;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Gradients - Electric Blue Theme */
+  --gradient-primary: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
   --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-accent: linear-gradient(135deg, #007BFF 0%, #00d4ff 100%);
   --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-cool: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  --gradient-cool: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+  --gradient-hero: linear-gradient(135deg, #007BFF 0%, #0056b3 50%, #f093fb 100%);
 
   /* Neutrals */
   --white: #ffffff;
@@ -98,7 +98,7 @@
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.4);
+  --shadow-glow: 0 0 20px rgba(0, 123, 255, 0.4);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
@@ -120,6 +120,50 @@
   --z-modal: 400;
   --z-popover: 500;
   --z-tooltip: 600;
+}
+
+[data-theme="dark"] {
+  /* Color Palette - Dark Mode Overrides */
+  --primary: #69C3FF; /* Electric Blue - Dark Mode */
+  --primary-dark: #3395ff;
+  --primary-light: #007BFF;
+
+  --bg-primary: #0f172a; /* Slate 900 */
+  --bg-secondary: #1e293b; /* Slate 800 */
+  
+  --text-primary: #f8fafc; /* Slate 50 */
+  --text-secondary: #cbd5e1; /* Slate 300 */
+  --text-muted: #94a3b8; /* Slate 400 */
+
+  /* Neutrals - Inverted for Dark Mode */
+  --white: #0f172a;
+  --gray-50: #1e293b;
+  --gray-100: #334155;
+  --gray-200: #475569;
+  --gray-300: #64748b;
+  --gray-400: #94a3b8;
+  --gray-500: #cbd5e1;
+  --gray-600: #e2e8f0;
+  --gray-700: #f1f5f9;
+  --gray-800: #f8fafc;
+  --gray-900: #ffffff;
+  --black: #ffffff;
+
+  /* Gradients - Dark Mode */
+  --gradient-primary: linear-gradient(135deg, #69C3FF 0%, #3395ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+  --gradient-accent: linear-gradient(135deg, #69C3FF 0%, #00d4ff 100%);
+  --gradient-warm: linear-gradient(135deg, #fb7185 0%, #fcd34d 100%);
+  --gradient-cool: linear-gradient(135deg, #69C3FF 0%, #3395ff 100%);
+  --gradient-hero: linear-gradient(135deg, #69C3FF 0%, #3395ff 50%, #f472b6 100%);
+
+  /* Shadows - Dark Mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+  --shadow-glow: 0 0 20px rgba(105, 195, 255, 0.3);
 }
 
 /* ========================================
@@ -298,6 +342,11 @@ a:hover {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="dark"] .card-glass {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Badge/Tag Styles */

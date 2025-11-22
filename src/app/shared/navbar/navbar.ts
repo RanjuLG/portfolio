@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,11 +15,17 @@ export class NavbarComponent {
   protected readonly name = 'Ranju Gamage';
   protected readonly role = 'Full-Stack Developer';
 
+  constructor(protected themeService: ThemeService) {}
+
   toggleMenu() {
     this.isMenuOpen.update(value => !value);
   }
 
   closeMenu() {
     this.isMenuOpen.set(false);
+  }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
   }
 }

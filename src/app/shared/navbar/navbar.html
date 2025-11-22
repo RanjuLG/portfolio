@@ -73,6 +73,45 @@
 
     <!-- Download Resume Button -->
     <div class="sidebar-footer">
+      <!-- Theme Toggle -->
+      <div class="theme-toggle-wrapper">
+        <button 
+          class="theme-toggle" 
+          (click)="toggleTheme()"
+          [attr.aria-label]="themeService.currentTheme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode'">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <!-- Sun Icon (Light Mode) -->
+              <svg 
+                *ngIf="themeService.currentTheme() === 'light'" 
+                class="theme-icon sun-icon" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <!-- Moon Icon (Dark Mode) -->
+              <svg 
+                *ngIf="themeService.currentTheme() === 'dark'" 
+                class="theme-icon moon-icon" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+              </svg>
+            </span>
+          </span>
+          <span class="theme-label">
+            {{ themeService.currentTheme() === 'light' ? 'Light' : 'Dark' }} Mode
+          </span>
+        </button>
+      </div>
+
       <a 
         href="/Ranju_Gamage_Resume.pdf" 
         download 
