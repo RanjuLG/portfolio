@@ -27,8 +27,8 @@
     <nav class="sidebar-nav">
       <a 
         routerLink="/" 
-        routerLinkActive="active" 
-        [routerLinkActiveOptions]="{exact: true}"
+        fragment="home"
+        [class.active]="activeSection() === 'home'"
         class="nav-link"
         (click)="closeMenu()">
         <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,8 +38,9 @@
       </a>
       
       <a 
-        routerLink="/about" 
-        routerLinkActive="active" 
+        routerLink="/" 
+        fragment="about"
+        [class.active]="activeSection() === 'about'"
         class="nav-link"
         (click)="closeMenu()">
         <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,8 +50,9 @@
       </a>
       
       <a 
-        routerLink="/projects" 
-        routerLinkActive="active" 
+        routerLink="/" 
+        fragment="projects"
+        [class.active]="activeSection() === 'projects'"
         class="nav-link"
         (click)="closeMenu()">
         <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +62,9 @@
       </a>
       
       <a 
-        routerLink="/contact" 
-        routerLinkActive="active" 
+        routerLink="/" 
+        fragment="contact"
+        [class.active]="activeSection() === 'contact'"
         class="nav-link"
         (click)="closeMenu()">
         <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

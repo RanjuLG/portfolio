@@ -22,11 +22,22 @@ export class App implements OnInit {
         if (typeof AOS !== 'undefined') {
           AOS.init({
             duration: 800,
-            once: true,
+            once: false, // Allow animations to repeat on scroll up/down if desired, or keep true
+            mirror: true, // Animate elements while scrolling past them
             offset: 100,
             easing: 'ease-out-cubic'
           });
-          AOS.refresh();
+          
+          // Refresh AOS on scroll to handle dynamic content
+          window.addEventListener('scroll', () => {
+            AOS.refresh();
+          });
+
+          // Refresh AOS on DOM changes (for lazy loaded content)
+          const observer = new MutationObserver(() => {
+            AOS.refresh();
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
         }
       }, 100);
     });
