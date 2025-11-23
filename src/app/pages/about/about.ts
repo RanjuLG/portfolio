@@ -13,6 +13,9 @@ interface TimelineItem {
   subtitle: string;
   duration: string;
   description: string;
+  details?: string[];
+  clients?: string[];
+  projects?: string[];
 }
 
 @Component({
@@ -45,51 +48,66 @@ export class AboutComponent {
     },
     {
       category: 'Backend',
-      items: ['C#', '.NET Core', 'ASP.NET', 'Node.js', 'RESTful APIs', 'Entity Framework']
+      items: ['C#', '.NET Core','.NET', 'ASP.NET','RESTful APIs', 'Entity Framework']
     },
     {
       category: 'Database',
-      items: ['SQL Server', 'MongoDB', 'PostgreSQL', 'Firebase']
+      items: ['SQL Server', 'MongoDB', 'PostgreSQL', 'MySQL']
     },
     {
       category: 'Tools & Cloud',
-      items: ['Git', 'Azure', 'Docker', 'VS Code', 'Visual Studio', 'Postman']
+      items: ['Azure','VS Code', 'Visual Studio', 'Postman']
+    },
+    {
+      category: 'Version Control',
+      items: ['Git', 'GitHub','GitLab']
+    },
+    {
+      category: 'Project Management',
+      items: ['Jira','Trello']
     }
   ];
 
   protected readonly experience: TimelineItem[] = [
     {
-      title: 'Full-Stack Developer',
-      subtitle: 'Tech Solutions Inc.',
-      duration: '2022 - Present',
-      description: 'Developed and maintained enterprise-level web applications using Angular and .NET Core. Led the development of a task management system serving 10,000+ users.'
-    },
-    {
-      title: 'Software Developer',
-      subtitle: 'Digital Innovations Ltd.',
-      duration: '2020 - 2022',
-      description: 'Built responsive web applications and RESTful APIs. Collaborated with cross-functional teams to deliver high-quality software solutions.'
-    },
-    {
-      title: 'Junior Developer',
-      subtitle: 'StartUp Ventures',
-      duration: '2019 - 2020',
-      description: 'Assisted in developing mobile applications using .NET MAUI. Gained experience in full software development lifecycle.'
+      title: 'Software Engineer',
+      subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
+      duration: '2023 - Present',
+      description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
+      details: [
+        'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',
+        'Responsible for deploying applications to production servers, ensuring stability and smooth operation in live environments',
+        'Designed and implemented RESTful APIs and Services to streamline data communication and improve system efficiency',
+        'Developed Windows services for real-time data processing and analytics, enhancing system performance'
+      ],
+      projects: [
+        'Energy Management System - ASP.NET Core Web API, Windows Service (.NET Framework), Angular, SQL Server, MongoDB',
+        'Integration of Maintenance Management System with User Management System - ASP.NET Core Web API, Angular',
+        'Tenant Billing System Configuration Module - ASP.NET Core Web API, Angular, SQL Server',
+        'Windows Desktop Application for Licence Verification - C# Windows Forms'
+      ]
+      ,
+      clients: [
+        'Nanyang Technological University (NTU) - Singapore',
+        'Singapore University of Technology and Design (SUTD)',
+        'IOI Central Boulevard Towers - Singapore',
+        'Marina One - Singapore'
+      ]
     }
   ];
 
   protected readonly education: TimelineItem[] = [
     {
-      title: 'Bachelor of Science in Computer Science',
-      subtitle: 'University of Technology',
-      duration: '2015 - 2019',
-      description: 'Graduated with honors. Focused on software engineering, databases, and web technologies.'
+      title: 'Master of Science in Computer Science (Reading)',
+      subtitle: 'Postgraduate Institute of Science, University of Peradeniya',
+      duration: '2024 - Present',
+      description: ''
     },
     {
-      title: 'Certified Azure Developer',
-      subtitle: 'Microsoft Certification',
-      duration: '2021',
-      description: 'Achieved Microsoft Azure Developer Associate certification.'
+      title: 'Bachelor of the Science of Engineering Honours',
+      subtitle: 'Faculty of Engineering, University of Peradeniya',
+      duration: '2017 - 2023',
+      description: ''
     }
   ];
 }
