@@ -16,9 +16,9 @@ export class ContactComponent {
   protected readonly submitError = signal<string | null>(null);
 
   protected readonly contactInfo = {
-    email: 'ranjugamage@example.com',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com'
+    email: 'ranjue16@gmail.com',
+    linkedin: 'https://linkedin.com/in/ranju-laksahan',
+    github: 'https://github.com/RanjuLG'
   };
 
   constructor(
