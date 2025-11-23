@@ -57,6 +57,38 @@
               </div>
               <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
               <p class="timeline-description">{{ item.description }}</p>
+              
+              @if (item.details && item.details.length > 0) {
+                <div class="timeline-details">
+                  <h5 class="details-heading">Key Responsibilities:</h5>
+                  <ul class="details-list">
+                    @for (detail of item.details; track detail) {
+                      <li>{{ detail }}</li>
+                    }
+                  </ul>
+                </div>
+              }    
+              @if (item.projects && item.projects.length > 0) {
+                <div class="timeline-details">
+                  <h5 class="details-heading">Key Projects:</h5>
+                  <ul class="details-list">
+                    @for (project of item.projects; track project) {
+                      <li>{{ project }}</li>
+                    }
+                  </ul>
+                </div>
+
+                @if (item.clients && item.clients.length > 0) {
+                <div class="timeline-details">
+                  <h5 class="details-heading">Major Clients:</h5>
+                  <ul class="details-list">
+                    @for (client of item.clients; track client) {
+                      <li>{{ client }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+              }
             </div>
           </div>
         }

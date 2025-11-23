@@ -13,6 +13,9 @@ interface TimelineItem {
   subtitle: string;
   duration: string;
   description: string;
+  details?: string[];
+  clients?: string[];
+  projects?: string[];
 }
 
 @Component({
@@ -68,10 +71,28 @@ export class AboutComponent {
   protected readonly experience: TimelineItem[] = [
     {
       title: 'Software Engineer',
-      subtitle: 'DSP Engineering Solutions',
+      subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
       duration: '2023 - Present',
-      description: `Designing and developing building automation software solutions for Singapore-based clients, 
-      using .NET and Angular.`
+      description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
+      details: [
+        'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',
+        'Responsible for deploying applications to production servers, ensuring stability and smooth operation in live environments',
+        'Designed and implemented RESTful APIs and Services to streamline data communication and improve system efficiency',
+        'Developed Windows services for real-time data processing and analytics, enhancing system performance'
+      ],
+      projects: [
+        'Energy Management System - ASP.NET Core Web API, Windows Service (.NET Framework), Angular, SQL Server, MongoDB',
+        'Integration of Maintenance Management System with User Management System - ASP.NET Core Web API, Angular',
+        'Tenant Billing System Configuration Module - ASP.NET Core Web API, Angular, SQL Server',
+        'Windows Desktop Application for Licence Verification - C# Windows Forms'
+      ]
+      ,
+      clients: [
+        'Nanyang Technological University (NTU) - Singapore',
+        'Singapore University of Technology and Design (SUTD)',
+        'IOI Central Boulevard Towers - Singapore',
+        'Marina One - Singapore'
+      ]
     }
   ];
 
