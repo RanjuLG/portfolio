@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+# grant write permission so the workflow can push to the release branch using GITHUB_TOKEN
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -14,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -25,19 +30,17 @@ jobs:
 
       - name: Compute repo name (for base-href)
         id: repo
-        run: echo "REPO_NAME=${portfolio#*/}" >> $GITHUB_ENV
+        run: echo "REPO_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
       - name: Build Angular (production) with correct base-href
-        # The base-href must be "/<repo-name>/" when hosting under username.github.io/<repo>/
         run: |
           echo "Building for repo: $REPO_NAME"
           npm run build -- --configuration production --output-path=dist/portfolio/browser --base-href "/$REPO_NAME/"
-        # NOTE: adjust "dist/website" above if your angular.json sets a different outputPath
 
       - name: Deploy to release branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./dist/portfolio/browser
           publish_branch: release
-          # commit message that will show in release branch history
           commit_message: "chore(publish): deploy from GitHub Actions (${GITHUB_SHA})"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
