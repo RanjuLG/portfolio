@@ -32,7 +32,7 @@ export class ProjectsService {
    */
   getProjects(): Observable<Project[]> {
     if (!this.projects$) {
-      this.projects$ = this.http.get<Project[]>('/projects.json').pipe(
+      this.projects$ = this.http.get<Project[]>('projects.json').pipe(
         shareReplay(1)
       );
     }
