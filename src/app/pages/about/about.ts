@@ -108,6 +108,18 @@ export class AboutComponent {
       subtitle: 'Faculty of Engineering, University of Peradeniya',
       duration: '2017 - 2023',
       description: ''
+    },
+    {
+      title: 'GCE A/L Examination - Physical Science',
+      subtitle: 'Ranabima Royal College, Peradeniya',
+      duration: '2013 - 2016',
+      description: '2A,B'
+    },
+    {
+      title: 'GCE O/L Examination',
+      subtitle: 'Ranabima Royal College, Peradeniya',
+      duration: '2007 - 2012',
+      description: '8A,1C'
     }
   ];
 }
