@@ -12,7 +12,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 })
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);
-  protected readonly photoUrl = '/me.png';
+  protected readonly photoUrl = 'me.png';
   protected readonly name = 'Ranju Gamage';
   protected readonly role = 'Full-Stack Developer';
   protected readonly activeSection = signal<string>('home');
