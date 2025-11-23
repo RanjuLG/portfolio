@@ -1,0 +1,133 @@
+<aside class="sidebar" [class.open]="isMenuOpen()">
+  <!-- Mobile Toggle Button -->
+  <button 
+    class="sidebar-toggle" 
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isMenuOpen()"
+    aria-label="Toggle sidebar menu">
+    <span class="hamburger" [class.active]="isMenuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <!-- Sidebar Content -->
+  <div class="sidebar-content">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-image-wrapper">
+        <img [src]="photoUrl" [alt]="name" class="profile-image">
+      </div>
+      <h2 class="profile-name">{{ name }}</h2>
+      <p class="profile-role">{{ role }}</p>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="sidebar-nav">
+      <a 
+        routerLink="/" 
+        fragment="home"
+        [class.active]="activeSection() === 'home'"
+        class="nav-link"
+        (click)="closeMenu()">
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" fill="currentColor"/>
+        </svg>
+        <span>Home</span>
+      </a>
+      
+      <a 
+        routerLink="/" 
+        fragment="about"
+        [class.active]="activeSection() === 'about'"
+        class="nav-link"
+        (click)="closeMenu()">
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+        </svg>
+        <span>About</span>
+      </a>
+      
+      <a 
+        routerLink="/" 
+        fragment="projects"
+        [class.active]="activeSection() === 'projects'"
+        class="nav-link"
+        (click)="closeMenu()">
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6H12L10 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6Z" fill="currentColor"/>
+        </svg>
+        <span>Projects</span>
+      </a>
+      
+      <a 
+        routerLink="/" 
+        fragment="contact"
+        [class.active]="activeSection() === 'contact'"
+        class="nav-link"
+        (click)="closeMenu()">
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+        </svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <!-- Download Resume Button -->
+    <div class="sidebar-footer">
+      <!-- Theme Toggle -->
+      <div class="theme-toggle-wrapper">
+        <button 
+          class="theme-toggle" 
+          (click)="toggleTheme()"
+          [attr.aria-label]="themeService.currentTheme() === 'light' ? 'Switch to dark mode' : 'Switch to light mode'">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <!-- Sun Icon (Light Mode) -->
+              <svg 
+                *ngIf="themeService.currentTheme() === 'light'" 
+                class="theme-icon sun-icon" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <!-- Moon Icon (Dark Mode) -->
+              <svg 
+                *ngIf="themeService.currentTheme() === 'dark'" 
+                class="theme-icon moon-icon" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+              </svg>
+            </span>
+          </span>
+          <span class="theme-label">
+            {{ themeService.currentTheme() === 'light' ? 'Light' : 'Dark' }} Mode
+          </span>
+        </button>
+      </div>
+
+      <a 
+        href="/Ranju_Gamage_Resume.pdf" 
+        download 
+        class="resume-btn"
+        (click)="closeMenu(); trackResumeDownload()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
+        </svg>
+        Resume
+      </a>
+    </div>
+  </div>
+
+  <!-- Overlay for mobile -->
+  <div class="sidebar-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
+</aside>

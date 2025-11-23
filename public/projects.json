@@ -1,0 +1,44 @@
+[
+  {
+    "id": "taskmate-mobile-app",
+    "name": "TaskMate Mobile App",
+    "shortDescription": "A comprehensive task management mobile application built with .NET MAUI for connecting customers with service workers.",
+    "fullDescription": "TaskMate is a full-stack mobile application that bridges the gap between customers seeking services and workers offering their skills. The app features real-time task management, in-app messaging, offer negotiations, review systems, and seamless payment integration. Built with modern architecture patterns including MVVM, dependency injection, and RESTful APIs.",
+    "technologies": ["C#", ".NET MAUI", "ASP.NET Core", "SQL Server", "Entity Framework Core", "REST API", "MVVM"],
+    "role": "Full-Stack Developer",
+    "thumbnailUrl": "",
+    "screenshots": [],
+    "challenges": "Implementing real-time notifications, managing complex state across multiple views, ensuring data synchronization between mobile and backend",
+    "solutions": "Utilized MVVM pattern for clean separation of concerns, implemented efficient data caching strategies, and created robust API endpoints with proper error handling",
+    "githubUrl": "https://github.com",
+    "liveUrl": ""
+  },
+  {
+    "id": "portfolio-website",
+    "name": "Portfolio Website",
+    "shortDescription": "A modern, responsive portfolio website built with Angular 20 showcasing projects and professional experience.",
+    "fullDescription": "Personal portfolio website designed with a mobile-first approach, featuring smooth animations, glassmorphism effects, and a modern gradient-based design system. The site includes project showcases, detailed about section, contact form integration, and downloadable resume functionality.",
+    "technologies": ["Angular 20", "TypeScript", "CSS3", "HTML5", "Responsive Design"],
+    "role": "Frontend Developer",
+    "thumbnailUrl": "",
+    "screenshots": [],
+    "challenges": "Creating a visually stunning yet performant interface, ensuring cross-browser compatibility, implementing smooth page transitions",
+    "solutions": "Developed a comprehensive CSS design system with CSS custom properties, utilized Angular's latest features for optimal performance, and implemented lazy loading for better load times",
+    "githubUrl": "https://github.com",
+    "liveUrl": ""
+  },
+  {
+    "id": "ecommerce-platform",
+    "name": "E-Commerce Platform",
+    "shortDescription": "A scalable e-commerce solution with shopping cart, payment processing, and inventory management.",
+    "fullDescription": "Full-featured e-commerce platform with user authentication, product catalog, shopping cart functionality, order management, and integrated payment processing. Built with a focus on scalability, security, and user experience.",
+    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe API", "JWT", "Redux"],
+    "role": "Full-Stack Developer",
+    "thumbnailUrl": "",
+    "screenshots": [],
+    "challenges": "Handling secure payment processing, managing complex state for shopping cart, optimizing database queries for product catalog",
+    "solutions": "Integrated Stripe for PCI-compliant payment processing, implemented Redux for predictable state management, created efficient MongoDB indexes for fast queries",
+    "githubUrl": "https://github.com",
+    "liveUrl": ""
+  }
+]
