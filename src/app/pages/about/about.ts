@@ -6,6 +6,7 @@ import { SeoService } from '../../services/seo.service';
 interface Skill {
   category: string;
   items: string[];
+  icon: string;
 }
 
 interface TimelineItem {
@@ -47,27 +48,38 @@ export class AboutComponent {
   protected readonly skills: Skill[] = [
     {
       category: 'Frontend',
-      items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Design']
+      items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Design'],
+      icon: 'M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'
     },
     {
       category: 'Backend',
-      items: ['C#', '.NET Core','.NET', 'ASP.NET','RESTful APIs', 'Entity Framework']
+      items: ['C#', '.NET Core','.NET', 'ASP.NET','RESTful APIs', 'Entity Framework'],
+      icon: 'M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'
     },
     {
       category: 'Database',
-      items: ['SQL Server', 'MongoDB', 'PostgreSQL', 'MySQL']
+      items: ['SQL Server', 'MongoDB', 'PostgreSQL', 'MySQL'],
+      icon: 'M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zm8 6c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9zm0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3z'
     },
     {
-      category: 'Tools & Cloud',
-      items: ['Azure','VS Code', 'Visual Studio', 'Postman']
+      category: 'Tools',
+      items: ['VS Code', 'Visual Studio', 'Postman'],
+      icon: 'M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z'
+    },
+    {
+      category: 'Cloud & DevOps',
+      items: ['Azure App Service', 'Azure Functions', 'Azure SQL Database', 'GitHub Actions', 'Azure DevOps'],
+      icon: 'M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'
     },
     {
       category: 'Version Control',
-      items: ['Git', 'GitHub','GitLab']
+      items: ['Git', 'GitHub','GitLab'],
+      icon: 'M22 11V3h-7v3H9V3H2v8h7V8h2v10h4v3h7v-8h-7v3h-2V8h2v3z'
     },
     {
       category: 'Project Management',
-      items: ['Jira','Trello']
+      items: ['Jira','Trello'],
+      icon: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z'
     }
   ];
 
