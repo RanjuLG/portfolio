@@ -43,7 +43,7 @@ export class AboutComponent {
   trackResumeDownload() {
     this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
   }
-  protected readonly introduction = `I'm a passionate Software Engineer with expertise in building robust web and mobile applications. Currently, I work as a Software Engineer at DSP Engineering Solutions Pvt. Ltd. I am also reading for my MSc. in Computer Science at the Postgraduate Institute of Science, University of Peradeniya, and hold a BSc. (Hons.) from the Faculty of Engineering, University of Peradeniya. With a strong foundation in both frontend and backend technologies, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
+  protected readonly introduction = `I'm a passionate Software Engineer with expertise in building robust web and mobile applications. Currently, I am working as a Software Engineer at DSP Engineering Solutions Pvt. Ltd. I am also reading for my MSc. in Computer Science at the Postgraduate Institute of Science, University of Peradeniya, and hold a BSc. (Eng) Hons. from the Faculty of Engineering, University of Peradeniya. With a strong foundation in both frontend and backend technologies, and over 2+ years of experience, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [
     {
