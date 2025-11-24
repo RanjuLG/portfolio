@@ -50,5 +50,191 @@
   "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
   "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
   "liveUrl": ""
-  }
+  },
+  {
+"id": "sub-pal",
+"name": "Sub Pal",
+"shortDescription": "A comprehensive subscription management system designed to track recurring expenses, manage categories, and provide visual insights into spending habits.",
+"fullDescription": "A full-stack application for managing personal and business subscriptions, seamlessly converted into a native Android application using Capacitor. The system features a modern Angular 19 frontend with Bootstrap 5 for a responsive user interface and a robust .NET 8 Web API backend using Entity Framework Core for reliable data persistence. Key features include secure JWT authentication, a dynamic dashboard with Chart.js visualizations, category-based organization, and automated notifications for upcoming payments.",
+"technologies": [
+"Angular 19",
+".NET 8",
+"Entity Framework Core 9",
+"SQL Server",
+"Bootstrap",
+"Chart.js",
+"JWT Authentication",
+"Capacitor",
+"Swagger",
+"RxJS"
+],
+"role": "Full-Stack Developer",
+"thumbnailUrl": "",
+"screenshots": [],
+"challengesAndSolutions": [
+{
+"challenge": "Ensuring secure user access and protecting sensitive subscription data across the application.",
+"solution": "Implemented robust JWT-based authentication with token validation parameters, ensuring that only authorized users can access protected API endpoints and frontend routes."
+},
+{
+"challenge": "Extending the web application to mobile platforms without maintaining a separate codebase.",
+"solution": "Utilized Capacitor to wrap the Angular application, enabling deployment as a native Android app while maintaining a single codebase for both web and mobile."
+},
+{
+"challenge": "Decoupling business logic from data access code to improve maintainability and testability.",
+"solution": "Adopted the Repository Pattern for data access, creating specific repositories for Users, Subscriptions, and Categories, which abstracted database operations from the service layer."
+},
+{
+"challenge": "Optimizing performance for frequently accessed data such as dashboard statistics and categories.",
+"solution": "Integrated an in-memory caching strategy using Microsoft.Extensions.Caching.Memory to reduce database round-trips for static or semi-static data."
+},
+{
+"challenge": "Handling cross-origin resource sharing (CORS) issues between the Angular frontend and the .NET backend.",
+"solution": "Configured a specific CORS policy 'AllowAngularApp' in the backend to securely permit requests from the frontend application while blocking unauthorized origins."
+},
+{
+"challenge": "Providing users with visual insights into their subscription spending without complex client-side calculations.",
+"solution": "Leveraged Chart.js on the frontend combined with optimized backend endpoints to aggregate and serve visualization-ready data efficiently."
+}
+],
+"githubUrlFE": "https://github.com/RanjuLG/Sub-Pal-GUI",
+"githubUrlBE": "https://github.com/RanjuLG/Sub-Pal-API",
+"liveUrl": ""
+},
+{
+"id": "taskmate",
+"name": "TaskMate",
+"shortDescription": "A cross-platform on-demand service marketplace connecting users with local workers for various tasks.",
+"fullDescription": "A comprehensive mobile and web solution for posting and fulfilling local tasks. The system features a .NET MAUI mobile app for cross-platform accessibility (iOS, Android, Windows) and a robust .NET Web API backend using PostgreSQL with PostGIS for geospatial features. It includes real-time updates via SignalR, secure JWT authentication, and interactive maps for task location.",
+"technologies": [
+".NET 10",
+".NET MAUI",
+"PostgreSQL",
+"Entity Framework Core",
+"SignalR",
+"Mapsui",
+"Refit",
+"Serilog",
+"JWT Authentication",
+"CommunityToolkit.Mvvm"
+],
+"role": "Full-Stack Developer",
+"thumbnailUrl": "",
+"screenshots": [],
+"challengesAndSolutions": [
+{
+"challenge": "Ensuring instant updates for task offers and status changes across multiple clients without excessive polling.",
+"solution": "Integrated SignalR to push real-time notifications and updates to connected clients, ensuring a responsive user experience."
+},
+{
+"challenge": "Efficiently storing and querying task locations to find nearby workers or tasks within a specific radius.",
+"solution": "Utilized PostgreSQL with PostGIS and NetTopologySuite in the backend for optimized spatial indexing and querying."
+},
+{
+"challenge": "Delivering a uniform and performant user experience across Android, iOS, and Windows devices.",
+"solution": "Leveraged .NET MAUI's cross-platform capabilities and CommunityToolkit.Mvvm to share business logic while adapting to native platform paradigms."
+},
+{
+"challenge": "Maintaining consistency and type safety between the backend API and the mobile client.",
+"solution": "Implemented Refit to generate type-safe API clients from interfaces, reducing boilerplate code and preventing runtime errors due to API mismatches."
+},
+{
+"challenge": "Managing complex application state and navigation in a mobile environment.",
+"solution": "Applied the MVVM pattern with CommunityToolkit.Mvvm for clean separation of concerns and utilized Shell navigation for structured app flow."
+}
+],
+"githubUrlFE": "https://github.com/RanjuLG/TaskMate_Mobile",
+"githubUrlBE": "https://github.com/RanjuLG/TaskMate_BE",
+"liveUrl": ""
+},
+{
+"id": "ums",
+"name": "UMS - User Management System",
+"shortDescription": "A comprehensive User Management System (UMS) designed to handle authentication, authorization, and platform-specific permissions for multiple applications.",
+"fullDescription": "Sub Pal is a robust User Management System that serves as a centralized authentication and authorization hub. It features a modern Angular 20 frontend for administrative tasks and a high-performance .NET 8 Web API backend. The system supports multi-platform management, granular permission control, and secure JWT-based authentication with support for complex claim structures including roles and platform-specific access rights.",
+"technologies": [
+"Angular 20",
+".NET 8",
+"Entity Framework Core 8",
+"SQL Server",
+"Angular Material",
+"JWT Authentication",
+"Swagger",
+"BCrypt",
+"RxJS",
+"Angular Auth OIDC Client"
+],
+"role": "Full-Stack Developer",
+"thumbnailUrl": "",
+"screenshots": [],
+"challengesAndSolutions": [
+{
+"challenge": "Managing complex JWT claims including user roles, platforms, and specific permissions in a multi-platform environment.",
+"solution": "Implemented a robust TokenService that dynamically constructs claims based on user roles and assigned platforms, ensuring granular access control and secure data transmission."
+},
+{
+"challenge": "Handling platform-specific permissions and redirect URIs for a distributed application ecosystem.",
+"solution": "Designed a flexible data model where platforms have specific redirect URIs and permissions are linked to both users and platforms, serialized into the JWT for seamless integration."
+},
+{
+"challenge": "Ensuring data integrity and auditability when modifying sensitive permission and role data.",
+"solution": "Implemented soft delete functionality in repositories to preserve historical data while maintaining referential integrity and preventing accidental data loss."
+},
+{
+"challenge": "Securely managing user passwords and ensuring robust authentication against common threats.",
+"solution": "Integrated BCrypt for industry-standard password hashing and implemented a secure token validation mechanism with configurable expiration and signing keys."
+}
+],
+"githubUrlFE": "https://github.com/RanjuLG/UMS-FE",
+"githubUrlBE": "https://github.com/RanjuLG/UMS-BE",
+"liveUrl": ""
+},
+{
+"id": "harvest-link",
+"name": "Harvest Link",
+"shortDescription": "A digital platform connecting farmers, buyers, and regional authorities directly, minimizing middleman involvement for fair and efficient trade.",
+"fullDescription": "A full-stack solution designed to streamline the agricultural supply chain by directly connecting farmers, buyers, and regional authorities, effectively minimizing middleman involvement. The system features a modern React-based frontend and a robust .NET 8 Web API backend. As a Full-Stack Developer, I was responsible for key modules including the Buyer interface and Regional Officer tools. My contributions included developing the Harvest Listings with advanced filtering, implementing the Purchase Management workflow with complex bargaining and counter-offer logic, and building a centralized Notification System. Additionally, I engineered the Regional Notification Management features to enable targeted communication and status tracking across regions.",
+"technologies": [
+"React 19",
+"Vite 6",
+"Bootstrap 5",
+".NET 8",
+"Entity Framework Core 9",
+"SQL Server",
+"JWT Authentication",
+"Swagger"
+],
+"role": "Full-Stack Developer",
+"thumbnailUrl": "",
+"screenshots": [],
+"challengesAndSolutions": [
+{
+"challenge": "Managing the complex lifecycle of bargaining offers, including counter-offers, acceptance, and rejection, while ensuring data consistency.",
+"solution": "Implemented a robust `BargainingService` that handles state transitions and automatically integrates with the shopping cart upon offer acceptance."
+},
+{
+"challenge": "Providing efficient search and filtering capabilities for harvest listings to allow buyers to find specific products quickly.",
+"solution": "Developed a `BuyerService` with dynamic query capabilities to filter harvests by location, category, and price, ensuring a responsive user experience."
+},
+{
+"challenge": "Ensuring users receive timely updates for critical events like purchase status changes and new offers.",
+"solution": "Built a centralized `NotificationService` that triggers targeted notifications for specific system events, supporting different priorities and types."
+},
+{
+"challenge": "Managing regional communication, including the delivery of scheduled and bulk messages to specific user groups.",
+"solution": "Created a `RegionalMessageService` with validation logic and a background service to handle scheduled message delivery and bulk processing efficiently."
+},
+{
+"challenge": "Securing API endpoints to ensure only authorized users from specific regions can access certain data.",
+"solution": "Utilized JWT Authentication with custom authorization policies to validate user claims and roles, protecting sensitive regional data."
+}
+],
+"githubUrlFE": "https://github.com/Ruwindya/HarvestLink",
+"githubUrlBE": "https://github.com/RanjuLG/HarvestLinkBE",
+"liveUrl": ""
+}
+
+
+
+
 ]
