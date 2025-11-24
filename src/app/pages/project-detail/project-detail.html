@@ -73,47 +73,34 @@
               <p class="project-full-desc">{{ project()!.fullDescription }}</p>
             </div>
 
-            @if (project()!.challenges || project()!.solutions) {
+            @if (project()!.challengesAndSolutions && project()!.challengesAndSolutions!.length > 0) {
               <div class="content-section card">
                 <h2 class="section-heading">Challenges & Solutions</h2>
-                @if (project()!.challenges) {
-                  <div class="subsection">
-                    <div class="subsection-header">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="currentColor"/>
-                      </svg>
-                      <h3>Challenges</h3>
+                <div class="challenges-list">
+                  @for (item of project()!.challengesAndSolutions; track item.challenge) {
+                    <div class="challenge-solution-block">
+                      <div class="cs-section challenge">
+                        <div class="cs-header">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" fill="#eab308"/>
+                          </svg>
+                          <h3>Challenge</h3>
+                        </div>
+                        <p>{{ item.challenge }}</p>
+                      </div>
+                      
+                      <div class="cs-section solution">
+                        <div class="cs-header">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" fill="#22c55e"/>
+                          </svg>
+                          <h3>Solution</h3>
+                        </div>
+                        <p>{{ item.solution }}</p>
+                      </div>
                     </div>
-                    @if (typeof project()!.challenges === 'string') {
-                      <p class="subsection-text">{{ project()!.challenges }}</p>
-                    } @else {
-                      <ul class="subsection-list">
-                        @for (challenge of project()!.challenges; track challenge) {
-                          <li>{{ challenge }}</li>
-                        }
-                      </ul>
-                    }
-                  </div>
-                }
-                @if (project()!.solutions) {
-                  <div class="subsection">
-                    <div class="subsection-header">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" fill="currentColor"/>
-                      </svg>
-                      <h3>Solutions</h3>
-                    </div>
-                    @if (typeof project()!.solutions === 'string') {
-                      <p class="subsection-text">{{ project()!.solutions }}</p>
-                    } @else {
-                      <ul class="subsection-list">
-                        @for (solution of project()!.solutions; track solution) {
-                          <li>{{ solution }}</li>
-                        }
-                      </ul>
-                    }
-                  </div>
-                }
+                  }
+                </div>
               </div>
             }
 

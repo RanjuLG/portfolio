@@ -337,3 +337,57 @@
     padding: var(--spacing-lg);
   }
 }
+
+/* Challenges & Solutions List */
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.challenge-solution-block {
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cs-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.cs-header h3 {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cs-section p {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding-left: calc(20px + var(--spacing-sm)); /* Align with text start (icon width + gap) */
+}
+
+/* Add a subtle divider between challenge and solution if needed, 
+   or just rely on spacing. Let's add a subtle border to the solution 
+   to separate it from challenge */
+.cs-section.solution {
+  padding-top: var(--spacing-lg);
+  border-top: 1px dashed var(--gray-200);
+}

@@ -3,7 +3,7 @@
   "id": "sms-gold-pawning",
   "name": "Shop Management System (SMS)",
   "shortDescription": "Comprehensive shop management system designed for gold pawning businesses with real-time transaction tracking and role-based access control.",
-  "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management,invoicing, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
+  "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management, invoicing, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
   "technologies": [
     "Angular 18",
     ".NET 8",
@@ -21,69 +21,34 @@
   "role": "Full-Stack Developer",
   "thumbnailUrl": "",
   "screenshots": [],
-  "challenges": [
-    "Managing complex loan calculations with installment tracking across multiple karatage types while maintaining data consistency",
-    "Implementing real-time transaction updates and ensuring secure role-based access control across multiple user types (Admin, Manager, Cashier)",
-    "Handling concurrent inventory operations and preventing race conditions during high-volume transaction periods",
-    "Designing a scalable architecture to support background services for automated loan status updates and interest calculations"
-  ],
-  "solutions": [
-    "Implemented repository pattern with Entity Framework Core for robust data access and transaction management",
-    "Utilized AutoMapper for clean DTO transformations and separation of concerns",
-    "Integrated Serilog for comprehensive structured logging across all services to track operations and debug issues",
-    "Developed custom pagination service to handle large datasets efficiently",
-    "Implemented JWT-based authentication with role claims for granular authorization",
-    "Created background services using .NET hosted services for automated maintenance tasks",
-    "Used Angular Material and Bootstrap for responsive, accessible UI components with consistent design patterns"
+  "challengesAndSolutions": [
+    {
+      "challenge": "Managing complex loan calculations with installment tracking across multiple karatage types while maintaining data consistency.",
+      "solution": "Implemented repository pattern with Entity Framework Core for robust data access and transaction management, ensuring atomic operations for financial accuracy."
+    },
+    {
+      "challenge": "Implementing secure role-based access control across multiple user types (Admin, Manager, Cashier) to protect sensitive financial data.",
+      "solution": "Implemented JWT-based authentication with role claims for granular authorization, securing API endpoints and frontend routes based on user permissions."
+    },
+    {
+      "challenge": "Handling large datasets for transaction history and inventory items efficiently without impacting performance.",
+      "solution": "Developed a custom pagination service and utilized AutoMapper for optimized DTO transformations to ensure fast response times and reduced payload sizes."
+    },
+    {
+      "challenge": "Automating loan status updates and interest calculations without manual intervention.",
+      "solution": "Created background services using .NET hosted services to run scheduled maintenance tasks, ensuring loan statuses and interest are always up-to-date."
+    },
+    {
+      "challenge": "Debugging complex transaction flows and monitoring system health in production.",
+      "solution": "Integrated Serilog for comprehensive structured logging across all services, providing detailed insights into operations and facilitating quick issue resolution."
+    },
+    {
+      "challenge": "The system faced significant risk of permanent data loss due to reliance on manual backup processes.",
+      "solution": "Developed an automated backup service that regularly creates secure backups of the SQL Server database, ensuring data integrity and availability."
+    }
   ],
   "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
   "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
   "liveUrl": ""
-  },
-  {
-    "id": "taskmate-mobile-app",
-    "name": "TaskMate Mobile App",
-    "shortDescription": "A comprehensive task management mobile application built with .NET MAUI for connecting customers with service workers.",
-    "fullDescription": "TaskMate is a full-stack mobile application that bridges the gap between customers seeking services and workers offering their skills. The app features real-time task management, in-app messaging, offer negotiations, review systems, and seamless payment integration. Built with modern architecture patterns including MVVM, dependency injection, and RESTful APIs.",
-    "technologies": ["C#", ".NET MAUI", "ASP.NET Core", "SQL Server", "Entity Framework Core", "REST API", "MVVM"],
-    "role": "Full-Stack Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
-    "challenges": [
-      "Implementing real-time notifications across the mobile application",
-      "Managing complex state across multiple views and ensuring data consistency",
-      "Ensuring seamless data synchronization between mobile app and backend services"
-    ],
-    "solutions": [
-      "Utilized MVVM pattern for clean separation of concerns and maintainable code structure",
-      "Implemented efficient data caching strategies to reduce network calls and improve performance",
-      "Created robust API endpoints with proper error handling and validation"
-    ],
-    "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
-    "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
-    "liveUrl": ""
-  },
-  {
-    "id": "portfolio-website",
-    "name": "Portfolio Website",
-    "shortDescription": "A modern, responsive portfolio website built with Angular 20 showcasing projects and professional experience.",
-    "fullDescription": "Personal portfolio website designed with a mobile-first approach, featuring smooth animations, glassmorphism effects, and a modern gradient-based design system. The site includes project showcases, detailed about section, contact form integration, and downloadable resume functionality.",
-    "technologies": ["Angular 20", "TypeScript", "CSS3", "HTML5", "Responsive Design"],
-    "role": "Frontend Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
-    "challenges": [
-      "Creating a visually stunning yet performant interface with modern design trends",
-      "Ensuring cross-browser compatibility and responsive design across all devices",
-      "Implementing smooth page transitions and animations without impacting performance"
-    ],
-    "solutions": [
-      "Developed a comprehensive CSS design system with CSS custom properties for consistency",
-      "Utilized Angular's latest features and standalone components for optimal performance",
-      "Implemented lazy loading and code splitting for better load times and user experience"
-    ],
-    "githubUrlFE": "https://github.com/RanjuLG/SMS-FE",
-    "githubUrlBE": "https://github.com/RanjuLG/SMS-BE",
-    "liveUrl": ""
   }
 ]

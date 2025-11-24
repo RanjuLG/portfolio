@@ -12,8 +12,7 @@ export interface Project {
   role: string;
   thumbnailUrl: string;
   screenshots: string[];
-  challenges: string | string[];
-  solutions: string | string[];
+  challengesAndSolutions?: { challenge: string; solution: string }[];
   githubUrlFE: string;
   githubUrlBE: string;
   liveUrl: string;
