@@ -12,9 +12,10 @@ export interface Project {
   role: string;
   thumbnailUrl: string;
   screenshots: string[];
-  challenges: string;
-  solutions: string;
-  githubUrl: string;
+  challenges: string | string[];
+  solutions: string | string[];
+  githubUrlFE: string;
+  githubUrlBE: string;
   liveUrl: string;
 }
 

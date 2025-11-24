@@ -11,6 +11,10 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'projects/:id',
+    loadComponent: () => import('./pages/project-detail/project-detail').then(m => m.ProjectDetailComponent)
+  },
+  {
     path: 'projects',
     redirectTo: '/#projects',
     pathMatch: 'full'

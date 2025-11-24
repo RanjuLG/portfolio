@@ -1,5 +1,46 @@
 [
   {
+  "id": "sms-gold-pawning",
+  "name": "Shop Management System (SMS)",
+  "shortDescription": "Comprehensive shop management system designed for gold pawning businesses with real-time transaction tracking and role-based access control.",
+  "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
+  "technologies": [
+    "Angular 18",
+    ".NET 8",
+    "Entity Framework Core 8",
+    "SQL Server",
+    "Angular Material",
+    "Bootstrap",
+    "Chart.js",
+    "JWT Authentication",
+    "AutoMapper",
+    "Serilog",
+    "RxJS",
+    "Swagger"
+    ],
+  "role": "Full-Stack Developer",
+  "thumbnailUrl": "",
+  "screenshots": [],
+  "challenges": [
+    "Managing complex loan calculations with installment tracking across multiple karatage types while maintaining data consistency",
+    "Implementing real-time transaction updates and ensuring secure role-based access control across multiple user types (Admin, Manager, Cashier)",
+    "Handling concurrent inventory operations and preventing race conditions during high-volume transaction periods",
+    "Designing a scalable architecture to support background services for automated loan status updates and interest calculations"
+  ],
+  "solutions": [
+    "Implemented repository pattern with Entity Framework Core for robust data access and transaction management",
+    "Utilized AutoMapper for clean DTO transformations and separation of concerns",
+    "Integrated Serilog for comprehensive structured logging across all services to track operations and debug issues",
+    "Developed custom pagination service to handle large datasets efficiently",
+    "Implemented JWT-based authentication with role claims for granular authorization",
+    "Created background services using .NET hosted services for automated maintenance tasks",
+    "Used Angular Material and Bootstrap for responsive, accessible UI components with consistent design patterns"
+  ],
+  "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
+  "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
+  "liveUrl": ""
+  },
+  {
     "id": "taskmate-mobile-app",
     "name": "TaskMate Mobile App",
     "shortDescription": "A comprehensive task management mobile application built with .NET MAUI for connecting customers with service workers.",
@@ -8,9 +49,18 @@
     "role": "Full-Stack Developer",
     "thumbnailUrl": "",
     "screenshots": [],
-    "challenges": "Implementing real-time notifications, managing complex state across multiple views, ensuring data synchronization between mobile and backend",
-    "solutions": "Utilized MVVM pattern for clean separation of concerns, implemented efficient data caching strategies, and created robust API endpoints with proper error handling",
-    "githubUrl": "https://github.com",
+    "challenges": [
+      "Implementing real-time notifications across the mobile application",
+      "Managing complex state across multiple views and ensuring data consistency",
+      "Ensuring seamless data synchronization between mobile app and backend services"
+    ],
+    "solutions": [
+      "Utilized MVVM pattern for clean separation of concerns and maintainable code structure",
+      "Implemented efficient data caching strategies to reduce network calls and improve performance",
+      "Created robust API endpoints with proper error handling and validation"
+    ],
+    "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
+    "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
     "liveUrl": ""
   },
   {
@@ -22,23 +72,18 @@
     "role": "Frontend Developer",
     "thumbnailUrl": "",
     "screenshots": [],
-    "challenges": "Creating a visually stunning yet performant interface, ensuring cross-browser compatibility, implementing smooth page transitions",
-    "solutions": "Developed a comprehensive CSS design system with CSS custom properties, utilized Angular's latest features for optimal performance, and implemented lazy loading for better load times",
-    "githubUrl": "https://github.com",
-    "liveUrl": ""
-  },
-  {
-    "id": "ecommerce-platform",
-    "name": "E-Commerce Platform",
-    "shortDescription": "A scalable e-commerce solution with shopping cart, payment processing, and inventory management.",
-    "fullDescription": "Full-featured e-commerce platform with user authentication, product catalog, shopping cart functionality, order management, and integrated payment processing. Built with a focus on scalability, security, and user experience.",
-    "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe API", "JWT", "Redux"],
-    "role": "Full-Stack Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
-    "challenges": "Handling secure payment processing, managing complex state for shopping cart, optimizing database queries for product catalog",
-    "solutions": "Integrated Stripe for PCI-compliant payment processing, implemented Redux for predictable state management, created efficient MongoDB indexes for fast queries",
-    "githubUrl": "https://github.com",
+    "challenges": [
+      "Creating a visually stunning yet performant interface with modern design trends",
+      "Ensuring cross-browser compatibility and responsive design across all devices",
+      "Implementing smooth page transitions and animations without impacting performance"
+    ],
+    "solutions": [
+      "Developed a comprehensive CSS design system with CSS custom properties for consistency",
+      "Utilized Angular's latest features and standalone components for optimal performance",
+      "Implemented lazy loading and code splitting for better load times and user experience"
+    ],
+    "githubUrlFE": "https://github.com/RanjuLG/SMS-FE",
+    "githubUrlBE": "https://github.com/RanjuLG/SMS-BE",
     "liveUrl": ""
   }
 ]
