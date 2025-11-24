@@ -3,7 +3,7 @@
   <div class="footer-container container">
     <div class="footer-content">
       <div class="footer-section">
-        <h3 class="footer-title">Ranju Gamage</h3>
+        <h3 class="footer-title">{{ config.personal.name }}</h3>
         <p class="footer-text">Full-Stack Developer passionate about creating exceptional digital experiences.</p>
       </div>
 
@@ -40,14 +40,14 @@
           <svg viewBox="0 0 24 24" class="email-icon" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
           </svg>
-          {{ email }}
+          {{ config.personal.email }}
         </p>
       </div>
     </div>
 
     <div class="footer-bottom">
       <p class="copyright">
-        &copy; {{ currentYear }} Ranju Gamage. All rights reserved.
+        &copy; {{ currentYear }} {{ config.personal.name }}. All rights reserved.
       </p>
       <p class="footer-note">
         Built with <span class="heart">❤️</span> using Angular

@@ -3,7 +3,7 @@
   "id": "sms-gold-pawning",
   "name": "Shop Management System (SMS)",
   "shortDescription": "Comprehensive shop management system designed for gold pawning businesses with real-time transaction tracking and role-based access control.",
-  "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
+  "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management,invoicing, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
   "technologies": [
     "Angular 18",
     ".NET 8",

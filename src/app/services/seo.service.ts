@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { PROFILE_CONFIG } from '../config/profile.config';
 
 export interface SeoConfig {
   title: string;
@@ -13,8 +14,8 @@ export interface SeoConfig {
 })
 export class SeoService {
   private readonly defaultImage = 'assets/images/og-image.jpg'; // Placeholder
-  private readonly siteName = 'Ranju Gamage - Full-Stack Developer';
-  private readonly baseUrl = 'https://ranjugamage.com'; // Replace with actual URL
+  private readonly siteName = PROFILE_CONFIG.seo.siteName;
+  private readonly baseUrl = PROFILE_CONFIG.urls.baseUrl;
 
   constructor(private title: Title, private meta: Meta) { }
 

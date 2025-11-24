@@ -60,7 +60,7 @@
   margin: 0;
 }
 .hero-title {
-  font-size: var(--text-2xl);
+  font-size: var(--text-1xl);
   color: var(--text-primary);
   font-weight: 600;
   margin: 0;

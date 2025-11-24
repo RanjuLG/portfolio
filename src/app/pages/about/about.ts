@@ -18,6 +18,8 @@ interface TimelineItem {
   projects?: string[];
 }
 
+import { PROFILE_CONFIG } from '../../config/profile.config';
+
 @Component({
   selector: 'app-about',
   imports: [CommonModule],
@@ -25,6 +27,7 @@ interface TimelineItem {
   styleUrl: './about.css'
 })
 export class AboutComponent {
+  protected readonly config = PROFILE_CONFIG;
   constructor(
     private analyticsService: AnalyticsService,
     private seoService: SeoService
