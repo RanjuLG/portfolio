@@ -44,3 +44,4 @@ jobs:
           publish_branch: release
           commit_message: 'chore(publish): deploy from GitHub Actions (${GITHUB_SHA})'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: www.ranjugamage.dev
