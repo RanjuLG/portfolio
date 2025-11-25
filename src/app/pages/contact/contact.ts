@@ -15,6 +15,7 @@ export class ContactComponent {
   protected readonly submitting = signal(false);
   protected readonly submitSuccess = signal(false);
   protected readonly submitError = signal<string | null>(null);
+  protected readonly showContactForm = signal(false);
 
   protected readonly contactInfo = {
     email: PROFILE_CONFIG.personal.email,

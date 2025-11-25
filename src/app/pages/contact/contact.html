@@ -10,8 +10,9 @@
 
   <section class="contact-content section-sm">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-grid" [class.centered-layout]="!showContactForm()">
         <!-- Contact Form -->
+        @if (showContactForm()) {
         <div class="form-column">
           <div class="form-card card">
             <h2 class="form-title">Send Me a Message</h2>
@@ -127,6 +128,7 @@
             </form>
           </div>
         </div>
+        }
 
         <!-- Contact Info -->
         <div class="info-column">
