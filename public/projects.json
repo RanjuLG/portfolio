@@ -156,8 +156,8 @@
 "Swagger"
 ],
 "role": "Full-Stack Developer",
-"thumbnailUrl": "",
-"screenshots": [],
+"thumbnailUrl": "hl_1.png",
+"screenshots": ["hl_1.png","hl_2.png","hl_3.png","hl_4.png","hl_5.png","hl_6.png","hl_7.png","hl_8.png","hl_9.png","hl_10.png","hl_11.png"],
 "challengesAndSolutions": [
 {
 "challenge": "Managing the complex lifecycle of bargaining offers, including counter-offers, acceptance, and rejection, while ensuring data consistency.",
