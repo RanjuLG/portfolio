@@ -232,9 +232,38 @@
 "githubUrlFE": "https://github.com/Ruwindya/HarvestLink",
 "githubUrlBE": "https://github.com/RanjuLG/HarvestLinkBE",
 "liveUrl": ""
+},
+{
+"id": "portfolio",
+"name": "Personal Portfolio",
+"shortDescription": "A modern, responsive personal portfolio website built with Angular 20 to showcase projects and skills.",
+"fullDescription": "A high-performance single-page application (SPA) designed to present professional experience and projects. Built with the latest Angular 20 features, it includes a custom light/dark mode theme system, smooth scroll animations, and a responsive design that adapts to all device sizes. The architecture emphasizes modularity and performance, utilizing standalone components and optimized asset loading.",
+"technologies": [
+"Angular 20",
+"RxJS 7",
+"CSS3 (Variables)",
+"AOS (Animate On Scroll)"
+],
+"role": "Frontend Developer",
+"thumbnailUrl": "",
+"screenshots": [],
+"challengesAndSolutions": [
+{
+"challenge": "Implementing a persistent light/dark mode that applies consistent styling across all components without code duplication.",
+"solution": "Created a centralized `ThemeService` using signals to manage state and CSS variables for dynamic color switching."
+},
+{
+"challenge": "Integrating scroll-based animations that work smoothly with Angular's client-side routing.",
+"solution": "Re-initialized AOS on `NavigationEnd` events and used `MutationObserver` to handle dynamic content changes."
+},
+{
+"challenge": "Creating a responsive navigation bar that highlights the active section while scrolling.",
+"solution": "Implemented a `HostListener` for window scroll events to calculate section offsets and update the active link state dynamically."
 }
-
-
-
+],
+"githubUrlFE": "https://github.com/RanjuLG/portfolio",
+"githubUrlBE": "",
+"liveUrl": "https://ranjugamage.dev"
+}
 
 ]
