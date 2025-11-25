@@ -12,10 +12,11 @@ export interface Project {
   role: string;
   thumbnailUrl: string;
   screenshots: string[];
-  challenges: string;
-  solutions: string;
-  githubUrl: string;
+  challengesAndSolutions?: { challenge: string; solution: string }[];
+  githubUrlFE: string;
+  githubUrlBE: string;
   liveUrl: string;
+  ongoing?: boolean;
 }
 
 @Injectable({

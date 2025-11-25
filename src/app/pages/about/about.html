@@ -7,7 +7,7 @@
         <p class="section-subtitle">Get to know more about my skills, experience, and background</p>
       </div>
       <div class="intro-content" data-aos="fade-up" data-aos-delay="100">
-        <p class="intro-text">{{ introduction }}</p>
+        <p class="intro-text" [innerHTML]="introduction"></p>
       </div>
     </div>
   </section>
@@ -21,7 +21,7 @@
           <div class="skill-card card" data-aos="fade-up" [attr.data-aos-delay]="100 * $index">
             <div class="skill-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.4 16.6L4.8 12L3.4 13.4L9.4 19.4L20.6 8.2L19.2 6.8L9.4 16.6Z" fill="url(#skillGrad)"/>
+                <path [attr.d]="skillGroup.icon" fill="url(#skillGrad)"/>
                 <defs>
                   <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style="stop-color:#007BFF"/>
@@ -137,7 +137,7 @@
             <h3>Download My Resume</h3>
             <p>Get a complete overview of my experience, skills, and education</p>
           </div>
-          <a href="Ranju_Gamage_Resume.pdf" download class="btn btn-primary" (click)="trackResumeDownload()">
+          <a [href]="config.urls.resume" download class="btn btn-primary" (click)="trackResumeDownload()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
             </svg>

@@ -586,3 +586,9 @@ a:hover {
   background: var(--primary);
   color: var(--white);
 }
+
+/* Global Highlight Class */
+.highlight {
+  color: var(--primary);
+  font-weight: 600;
+}

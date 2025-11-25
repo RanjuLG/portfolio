@@ -4,6 +4,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ThemeService } from '../../services/theme.service';
 import { AnalyticsService } from '../../services/analytics.service';
 
+import { PROFILE_CONFIG } from '../../config/profile.config';
+
 @Component({
   selector: 'app-navbar',
   imports: [RouterLink, CommonModule],
@@ -12,9 +14,8 @@ import { AnalyticsService } from '../../services/analytics.service';
 })
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);
-  protected readonly photoUrl = 'me.png';
-  protected readonly name = 'Ranju Gamage';
-  protected readonly role = 'Full-Stack Developer';
+  protected readonly photoUrl = 'me.webp';
+  protected readonly config = PROFILE_CONFIG;
   protected readonly activeSection = signal<string>('home');
   private isBrowser: boolean;
 

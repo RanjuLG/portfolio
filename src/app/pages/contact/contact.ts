@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SeoService } from '../../services/seo.service';
+import { PROFILE_CONFIG } from '../../config/profile.config';
 
 @Component({
   selector: 'app-contact',
@@ -16,9 +17,9 @@ export class ContactComponent {
   protected readonly submitError = signal<string | null>(null);
 
   protected readonly contactInfo = {
-    email: 'ranjue16@gmail.com',
-    linkedin: 'https://linkedin.com/in/ranju-laksahan',
-    github: 'https://github.com/RanjuLG'
+    email: PROFILE_CONFIG.personal.email,
+    linkedin: PROFILE_CONFIG.social.linkedin,
+    github: PROFILE_CONFIG.social.github
   };
 
   constructor(

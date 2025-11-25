@@ -17,10 +17,10 @@
     <!-- Profile Section -->
     <div class="profile-section">
       <div class="profile-image-wrapper">
-        <img [src]="photoUrl" [alt]="name" class="profile-image">
+        <img [src]="photoUrl" [alt]="config.personal.name" class="profile-image">
       </div>
-      <h2 class="profile-name">{{ name }}</h2>
-      <p class="profile-role">{{ role }}</p>
+      <h2 class="profile-name">{{ config.personal.name }}</h2>
+      <p class="profile-role">{{ config.personal.role }}</p>
     </div>
 
     <!-- Navigation Menu -->
@@ -116,7 +116,7 @@
       </div>
 
       <a 
-        href="Ranju_Gamage_Resume.pdf" 
+        [href]="config.urls.resume" 
         download 
         class="resume-btn"
         (click)="closeMenu(); trackResumeDownload()">

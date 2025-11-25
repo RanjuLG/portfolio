@@ -12,29 +12,29 @@ import { ContactComponent } from '../contact/contact';
       <app-home></app-home>
     </section>
 
-    @defer (on viewport) {
-      <section id="about">
+    <section id="about">
+      @defer (on viewport) {
         <app-about></app-about>
-      </section>
-    } @placeholder {
-      <div class="section-placeholder">Loading About...</div>
-    }
+      } @placeholder {
+        <div class="section-placeholder">Loading About...</div>
+      }
+    </section>
 
-    @defer (on viewport) {
-      <section id="projects">
+    <section id="projects">
+      @defer (on viewport) {
         <app-projects></app-projects>
-      </section>
-    } @placeholder {
-      <div class="section-placeholder">Loading Projects...</div>
-    }
+      } @placeholder {
+        <div class="section-placeholder">Loading Projects...</div>
+      }
+    </section>
 
-    @defer (on viewport) {
-      <section id="contact">
+    <section id="contact">
+      @defer (on viewport) {
         <app-contact></app-contact>
-      </section>
-    } @placeholder {
-      <div class="section-placeholder">Loading Contact...</div>
-    }
+      } @placeholder {
+        <div class="section-placeholder">Loading Contact...</div>
+      }
+    </section>
   `,
   styles: [`
     .section-placeholder {

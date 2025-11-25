@@ -5,8 +5,8 @@
       <div class="hero-content">
         <div class="hero-text" data-aos="fade-up">
           <p class="hero-greeting">Hi, I'm</p>
-          <h1 class="hero-name text-gradient">{{ name }}</h1>
-          <h2 class="hero-role">{{ role }}</h2>
+          <h1 class="hero-name text-gradient">{{ config.personal.name }}</h1>
+          <h2 class="hero-role">{{ config.personal.role }}</h2>
           <h2 class="hero-title">{{ title }}</h2>
           <p class="hero-tagline">{{ tagline }}</p>
           
@@ -19,7 +19,7 @@
               </svg>
               View Projects
             </a>
-            <a href="Ranju_Gamage_Resume.pdf" download class="btn btn-secondary" (click)="trackResumeDownload()">
+            <a [href]="config.urls.resume" download class="btn btn-secondary" (click)="trackResumeDownload()">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
               </svg>
@@ -48,7 +48,7 @@
         
         <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
           <div class="image-placeholder">
-            <img src="me.png" alt="Ranju Gamage" class="profile-img">
+            <img src="me.webp" [alt]="config.personal.name" class="profile-img">
           </div>
         </div>
       </div>
