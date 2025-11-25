@@ -15,12 +15,15 @@ export class ContactComponent {
   protected readonly submitting = signal(false);
   protected readonly submitSuccess = signal(false);
   protected readonly submitError = signal<string | null>(null);
+  protected readonly showContactForm = signal(false);
 
   protected readonly contactInfo = {
     email: PROFILE_CONFIG.personal.email,
     linkedin: PROFILE_CONFIG.social.linkedin,
     github: PROFILE_CONFIG.social.github
   };
+
+  protected readonly availability = PROFILE_CONFIG.availability;
 
   constructor(
     private fb: FormBuilder,

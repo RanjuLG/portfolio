@@ -10,8 +10,9 @@
 
   <section class="contact-content section-sm">
     <div class="container">
-      <div class="contact-grid">
+      <div class="contact-grid" [class.centered-layout]="!showContactForm()">
         <!-- Contact Form -->
+        @if (showContactForm()) {
         <div class="form-column">
           <div class="form-card card">
             <h2 class="form-title">Send Me a Message</h2>
@@ -127,6 +128,7 @@
             </form>
           </div>
         </div>
+        }
 
         <!-- Contact Info -->
         <div class="info-column">
@@ -195,8 +197,7 @@
             <div class="availability">
               <div class="availability-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="url(#availGrad)" stroke-width="2"/>
-                  <path d="M12 6V12L16 14" stroke="url(#availGrad)" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2 6.89 2 8V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4ZM20 19H4V8H20V19ZM12 14C13.66 14 15 12.66 15 11H9C9 12.66 10.34 14 12 14Z" fill="url(#availGrad)"/>
                   <defs>
                     <linearGradient id="availGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" style="stop-color:#007BFF"/>
@@ -205,8 +206,8 @@
                   </defs>
                 </svg>
               </div>
-              <h4>Currently Available</h4>
-              <p>Open to new opportunities and freelance projects</p>
+              <h4>{{ availability.title }}</h4>
+              <p>{{ availability.message }}</p>
             </div>
           </div>
         </div>

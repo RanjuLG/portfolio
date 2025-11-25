@@ -16,5 +16,10 @@ export const PROFILE_CONFIG = {
   },
   seo: {
     siteName: 'Ranju Gamage - Software Engineer'
+  },
+  availability: {
+    status: true,
+    title: 'Currently Available',
+    message: 'Open to new opportunities and freelance projects'
   }
 };
