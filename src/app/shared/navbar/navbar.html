@@ -1,17 +1,17 @@
-<aside class="sidebar" [class.open]="isMenuOpen()">
-  <!-- Mobile Toggle Button -->
-  <button 
-    class="sidebar-toggle" 
-    (click)="toggleMenu()"
-    [attr.aria-expanded]="isMenuOpen()"
-    aria-label="Toggle sidebar menu">
-    <span class="hamburger" [class.active]="isMenuOpen()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-  </button>
+<!-- Mobile Toggle Button -->
+<button 
+  class="sidebar-toggle" 
+  (click)="toggleMenu()"
+  [attr.aria-expanded]="isMenuOpen()"
+  aria-label="Toggle sidebar menu">
+  <span class="hamburger" [class.active]="isMenuOpen()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+</button>
 
+<aside class="sidebar" [class.open]="isMenuOpen()">
   <!-- Sidebar Content -->
   <div class="sidebar-content">
     <!-- Profile Section -->
@@ -127,7 +127,7 @@
       </a>
     </div>
   </div>
-
-  <!-- Overlay for mobile -->
-  <div class="sidebar-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
 </aside>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" [class.active]="isMenuOpen()" (click)="closeMenu()"></div>
