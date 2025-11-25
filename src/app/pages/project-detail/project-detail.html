@@ -28,7 +28,12 @@
         </button>
         
         <div class="header-content animate-fade-in-up">
-          <h1 class="project-name text-gradient">{{ project()!.name }}</h1>
+          <div class="project-title-wrapper">
+            <h1 class="project-name text-gradient">{{ project()!.name }}</h1>
+            @if (project()!.ongoing) {
+              <span class="badge badge-ongoing">Ongoing</span>
+            }
+          </div>
           <p class="project-role">{{ project()!.role }}</p>
           <p class="project-short-desc">{{ project()!.shortDescription }}</p>
           

@@ -16,6 +16,7 @@ export interface Project {
   githubUrlFE: string;
   githubUrlBE: string;
   liveUrl: string;
+  ongoing?: boolean;
 }
 
 @Injectable({

@@ -14,7 +14,7 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
 })
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);
-  protected readonly photoUrl = 'me.png';
+  protected readonly photoUrl = 'me.webp';
   protected readonly config = PROFILE_CONFIG;
   protected readonly activeSection = signal<string>('home');
   private isBrowser: boolean;

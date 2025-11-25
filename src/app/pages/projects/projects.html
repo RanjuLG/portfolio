@@ -54,7 +54,12 @@
               </div>
               
               <div class="project-content">
-                <h3 class="project-title">{{ project.name }}</h3>
+                <div class="project-title-row">
+                  <h3 class="project-title">{{ project.name }}</h3>
+                  @if (project.ongoing) {
+                    <span class="badge badge-ongoing">Ongoing</span>
+                  }
+                </div>
                 <p class="project-description">{{ project.shortDescription }}</p>
                 
                 <div class="project-tech">
