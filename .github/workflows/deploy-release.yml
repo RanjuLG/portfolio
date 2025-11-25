@@ -35,7 +35,7 @@ jobs:
       - name: Build Angular (production) with correct base-href
         run: |
           echo "Building for repo: $REPO_NAME"
-          npm run build -- --configuration production --output-path=dist/portfolio --base-href "/$REPO_NAME/"
+          npm run build -- --configuration production --output-path=dist/portfolio --base-href "/"
 
       - name: Deploy to release branch
         uses: peaceiris/actions-gh-pages@v3
@@ -44,3 +44,4 @@ jobs:
           publish_branch: release
           commit_message: 'chore(publish): deploy from GitHub Actions (${GITHUB_SHA})'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: www.ranjugamage.dev
