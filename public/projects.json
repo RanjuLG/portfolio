@@ -246,8 +246,8 @@
 "AOS (Animate On Scroll)"
 ],
 "role": "Frontend Developer",
-"thumbnailUrl": "",
-"screenshots": [],
+"thumbnailUrl": "pf_1.png",
+"screenshots": ["pf_1.png","pf_2.png","pf_3.png","pf_4.png"],
 "challengesAndSolutions": [
 {
 "challenge": "Implementing a persistent light/dark mode that applies consistent styling across all components without code duplication.",
