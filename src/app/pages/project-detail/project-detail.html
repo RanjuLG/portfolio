@@ -38,6 +38,14 @@
           <p class="project-short-desc">{{ project()!.shortDescription }}</p>
           
           <div class="project-actions">
+            @if (project()!.screenshots && project()!.screenshots.length > 0) {
+              <button (click)="scrollToGallery()" class="btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="currentColor"/>
+                </svg>
+                View Gallery
+              </button>
+            }
             @if (project()!.githubUrlFE) {
               <a [href]="project()!.githubUrlFE" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -110,11 +118,15 @@
             }
 
             @if (project()!.screenshots && project()!.screenshots.length > 0) {
-              <div class="content-section">
+              <div class="content-section" id="screenshots-section">
                 <h2 class="section-heading">Screenshots</h2>
                 <div class="screenshots-grid">
-                  @for (screenshot of project()!.screenshots; track screenshot) {
-                    <img [src]="screenshot" [alt]="project()!.name + ' screenshot'" class="screenshot">
+                  @for (screenshot of project()!.screenshots; track screenshot; let i = $index) {
+                    <img 
+                      [src]="getImageUrl(screenshot)" 
+                      [alt]="project()!.name + ' screenshot'" 
+                      class="screenshot"
+                      (click)="openImage(screenshot, i)">
                   }
                 </div>
               </div>
@@ -165,5 +177,38 @@
         </div>
       </div>
     </section>
+  }
+
+  <!-- Image Lightbox Modal -->
+  @if (selectedImage()) {
+    <div class="lightbox-overlay" (click)="closeImage()">
+      <div class="lightbox-container" (click)="$event.stopPropagation()">
+        <button class="lightbox-close" (click)="closeImage()" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor"/>
+          </svg>
+        </button>
+        
+        @if (project()!.screenshots.length > 1) {
+          <button class="lightbox-nav lightbox-prev" (click)="previousImage()" aria-label="Previous image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.41 7.41L14 6L8 12L14 18L15.41 16.59L10.83 12L15.41 7.41Z" fill="currentColor"/>
+            </svg>
+          </button>
+          
+          <button class="lightbox-nav lightbox-next" (click)="nextImage()" aria-label="Next image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.59 16.59L10 18L16 12L10 6L8.59 7.41L13.17 12L8.59 16.59Z" fill="currentColor"/>
+            </svg>
+          </button>
+        }
+        
+        <img [src]="selectedImage()" [alt]="project()!.name + ' enlarged screenshot'" class="lightbox-image">
+        
+        <div class="lightbox-counter">
+          {{ currentImageIndex() + 1 }} / {{ project()!.screenshots.length }}
+        </div>
+      </div>
+    </div>
   }
 </div>

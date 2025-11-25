@@ -43,7 +43,7 @@ export class AboutComponent {
   trackResumeDownload() {
     this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
   }
-  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web and mobile applications. Currently, I am working as a Software Engineer at <span class="highlight">DSP Engineering Solutions Pvt. Ltd.</span> I am also reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
+  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web and mobile applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [
     {
@@ -87,7 +87,7 @@ export class AboutComponent {
     {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
-      duration: '2023 - Present',
+      duration: '2023 - present',
       description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
       details: [
         'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',

@@ -19,8 +19,8 @@
     "Swagger"
     ],
   "role": "Full-Stack Developer",
-  "thumbnailUrl": "",
-  "screenshots": [],
+  "thumbnailUrl": "sms_1.png",
+  "screenshots": ["sms_1.png","sms_2.png","sms_4.png","sms_5.png","sms_6.png","sms_7.png","sms_8.png","sms_9.png","sms_3.png"],
   "challengesAndSolutions": [
     {
       "challenge": "Managing complex loan calculations with installment tracking across multiple karatage types while maintaining data consistency.",
@@ -70,8 +70,8 @@
       "CommunityToolkit.Mvvm"
     ],
     "role": "Full-Stack Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
+    "thumbnailUrl": "tm_2.png",
+    "screenshots": ["tm_20.png","tm_1.png","tm_2.png","tm_3.png","tm_4.png","tm_5.png","tm_6.png","tm_7.png","tm_8.png","tm_9.png","tm_10.png","tm_11.png","tm_12.png","tm_13.png","tm_14.png","tm_15.png","tm_16.png","tm_17.png","tm_18.png","tm_19.png"],
     "challengesAndSolutions": [
       {
         "challenge": "Ensuring instant updates for task offers and status changes across multiple clients without excessive polling.",
@@ -101,7 +101,7 @@
 {
 "id": "ums",
 "name": "UMS - User Management System",
-"shortDescription": "A comprehensive User Management System (UMS) designed to handle authentication, authorization, and platform-specific permissions for multiple applications.",
+"shortDescription": "A comprehensive User Management System (UMS) / Single Sign On (SSO), designed to handle authentication, authorization, and platform-specific permissions for multiple applications.",
 "fullDescription": "Sub Pal is a robust User Management System that serves as a centralized authentication and authorization hub. It features a modern Angular 20 frontend for administrative tasks and a high-performance .NET 8 Web API backend. The system supports multi-platform management, granular permission control, and secure JWT-based authentication with support for complex claim structures including roles and platform-specific access rights.",
 "technologies": [
 "Angular 20",
@@ -116,8 +116,8 @@
 "Angular Auth OIDC Client"
 ],
 "role": "Full-Stack Developer",
-"thumbnailUrl": "",
-"screenshots": [],
+"thumbnailUrl": "ums_3.png",
+"screenshots": ["ums_1.png","ums_2.png","ums_3.png","ums_4.png","ums_5.png","ums_6.png","ums_7.png","ums_8.png"],
 "challengesAndSolutions": [
 {
 "challenge": "Managing complex JWT claims including user roles, platforms, and specific permissions in a multi-platform environment.",
@@ -156,8 +156,8 @@
 "Swagger"
 ],
 "role": "Full-Stack Developer",
-"thumbnailUrl": "",
-"screenshots": [],
+"thumbnailUrl": "hl_1.png",
+"screenshots": ["hl_1.png","hl_2.png","hl_3.png","hl_4.png","hl_5.png","hl_6.png","hl_7.png","hl_8.png","hl_9.png","hl_10.png","hl_11.png"],
 "challengesAndSolutions": [
 {
 "challenge": "Managing the complex lifecycle of bargaining offers, including counter-offers, acceptance, and rejection, while ensuring data consistency.",
@@ -187,7 +187,7 @@
   {
     "id": "sub-pal",
     "name": "Sub Pal",
-    "shortDescription": "A comprehensive subscription management system designed to track recurring expenses, manage categories, and provide visual insights into spending habits.",
+    "shortDescription": "A comprehensive subscription management system designed to track recurring expenses, manage categories, enable notifications and provide visual insights into spending habits.",
     "fullDescription": "A full-stack application for managing personal and business subscriptions, seamlessly converted into a native Android application using Capacitor. The system features a modern Angular 19 frontend with Bootstrap 5 for a responsive user interface and a robust .NET 8 Web API backend using Entity Framework Core for reliable data persistence. Key features include secure JWT authentication, a dynamic dashboard with Chart.js visualizations, category-based organization, and automated notifications for upcoming payments.",
     "technologies": [
       "Angular 19",
@@ -202,8 +202,8 @@
       "RxJS"
     ],
     "role": "Full-Stack Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
+    "thumbnailUrl": "sp_1.png",
+    "screenshots": ["sp_2.png","sp_1.png","sp_3.png","sp_4.png","sp_5.png","sp_6.png"],
     "challengesAndSolutions": [
       {
         "challenge": "Ensuring secure user access and protecting sensitive subscription data across the application.",
