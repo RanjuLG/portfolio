@@ -87,7 +87,7 @@ export class AboutComponent {
     {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
-      duration: '2023/08 - 2025/10',
+      duration: '2023 - present',
       description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
       details: [
         'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',

@@ -19,8 +19,8 @@
     "Swagger"
     ],
   "role": "Full-Stack Developer",
-  "thumbnailUrl": "",
-  "screenshots": [],
+  "thumbnailUrl": "sms_1.png",
+  "screenshots": ["sms_1.png","sms_2.png","sms_4.png","sms_5.png","sms_6.png","sms_7.png","sms_8.png","sms_9.png","sms_3.png"],
   "challengesAndSolutions": [
     {
       "challenge": "Managing complex loan calculations with installment tracking across multiple karatage types while maintaining data consistency.",

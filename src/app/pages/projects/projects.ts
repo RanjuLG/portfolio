@@ -48,4 +48,14 @@ export class ProjectsComponent implements OnInit {
   viewProject(projectId: string) {
     this.router.navigate(['/projects', projectId]);
   }
+
+  getImageUrl(imagePath: string): string {
+    if (!imagePath) return '';
+    // If path already includes 'assets/', return as-is (for backward compatibility)
+    if (imagePath.startsWith('assets/') || imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    // Otherwise, prepend the base path
+    return `assets/projects/${imagePath}`;
+  }
 }

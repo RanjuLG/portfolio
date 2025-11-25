@@ -37,7 +37,7 @@
             <div class="project-card card" (click)="viewProject(project.id)" data-aos="fade-up" [attr.data-aos-delay]="100 * $index">
               <div class="project-image">
                 @if (project.thumbnailUrl) {
-                  <img [src]="project.thumbnailUrl" [alt]="project.name">
+                  <img [src]="getImageUrl(project.thumbnailUrl)" [alt]="project.name">
                 } @else {
                   <div class="project-placeholder">
                     <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
