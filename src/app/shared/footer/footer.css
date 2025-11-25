@@ -67,6 +67,7 @@
   transition: all var(--transition-fast);
   display: inline-block;
   width: fit-content;
+  cursor: pointer;
 }
 
 .footer-link:hover {

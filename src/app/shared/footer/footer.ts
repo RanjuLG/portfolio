@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { PROFILE_CONFIG } from '../../config/profile.config';
 
 @Component({
@@ -9,8 +10,17 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
   styleUrl: './footer.css'
 })
 export class FooterComponent {
+  private router = inject(Router);
   protected readonly currentYear = new Date().getFullYear();
   protected readonly config = PROFILE_CONFIG;
+
+  navigateTo(section: string): void {
+    if (section === 'home') {
+      this.router.navigate(['/']);
+    } else {
+      this.router.navigate(['/'], { fragment: section });
+    }
+  }
   protected readonly socialLinks = [
     {
       name: 'GitHub',
