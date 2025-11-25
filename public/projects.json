@@ -101,7 +101,7 @@
 {
 "id": "ums",
 "name": "UMS - User Management System",
-"shortDescription": "A comprehensive User Management System (UMS) designed to handle authentication, authorization, and platform-specific permissions for multiple applications.",
+"shortDescription": "A comprehensive User Management System (UMS) / Single Sign On (SSO), designed to handle authentication, authorization, and platform-specific permissions for multiple applications.",
 "fullDescription": "Sub Pal is a robust User Management System that serves as a centralized authentication and authorization hub. It features a modern Angular 20 frontend for administrative tasks and a high-performance .NET 8 Web API backend. The system supports multi-platform management, granular permission control, and secure JWT-based authentication with support for complex claim structures including roles and platform-specific access rights.",
 "technologies": [
 "Angular 20",
@@ -116,8 +116,8 @@
 "Angular Auth OIDC Client"
 ],
 "role": "Full-Stack Developer",
-"thumbnailUrl": "",
-"screenshots": [],
+"thumbnailUrl": "ums_3.png",
+"screenshots": ["ums_1.png","ums_2.png","ums_3.png","ums_4.png","ums_5.png","ums_6.png","ums_7.png","ums_8.png"],
 "challengesAndSolutions": [
 {
 "challenge": "Managing complex JWT claims including user roles, platforms, and specific permissions in a multi-platform environment.",
