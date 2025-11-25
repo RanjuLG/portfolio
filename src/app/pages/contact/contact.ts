@@ -23,6 +23,8 @@ export class ContactComponent {
     github: PROFILE_CONFIG.social.github
   };
 
+  protected readonly availability = PROFILE_CONFIG.availability;
+
   constructor(
     private fb: FormBuilder,
     private seoService: SeoService
