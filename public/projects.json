@@ -187,7 +187,7 @@
   {
     "id": "sub-pal",
     "name": "Sub Pal",
-    "shortDescription": "A comprehensive subscription management system designed to track recurring expenses, manage categories, and provide visual insights into spending habits.",
+    "shortDescription": "A comprehensive subscription management system designed to track recurring expenses, manage categories, enable notifications and provide visual insights into spending habits.",
     "fullDescription": "A full-stack application for managing personal and business subscriptions, seamlessly converted into a native Android application using Capacitor. The system features a modern Angular 19 frontend with Bootstrap 5 for a responsive user interface and a robust .NET 8 Web API backend using Entity Framework Core for reliable data persistence. Key features include secure JWT authentication, a dynamic dashboard with Chart.js visualizations, category-based organization, and automated notifications for upcoming payments.",
     "technologies": [
       "Angular 19",
@@ -202,8 +202,8 @@
       "RxJS"
     ],
     "role": "Full-Stack Developer",
-    "thumbnailUrl": "",
-    "screenshots": [],
+    "thumbnailUrl": "sp_1.png",
+    "screenshots": ["sp_2.png","sp_1.png","sp_3.png","sp_4.png","sp_5.png","sp_6.png"],
     "challengesAndSolutions": [
       {
         "challenge": "Ensuring secure user access and protecting sensitive subscription data across the application.",
