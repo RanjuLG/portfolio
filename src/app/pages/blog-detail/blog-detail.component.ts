@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { BlogService, BlogPost } from '../../services/blog.service';
@@ -10,7 +10,8 @@ import { Document, BLOCKS } from '@contentful/rich-text-types';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './blog-detail.html',
-  styleUrls: ['./blog-detail.css']
+  styleUrls: ['./blog-detail.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BlogDetailComponent implements OnInit {
   post = signal<BlogPost | undefined>(undefined);
