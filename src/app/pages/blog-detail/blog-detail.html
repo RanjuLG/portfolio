@@ -1,0 +1,38 @@
+<div class="blog-detail-container">
+  @if (loading()) {
+  <div class="loading-spinner">Loading...</div>
+  } @if (!loading() && !post()) {
+  <div class="not-found">
+    <h1>Post not found</h1>
+    <a routerLink="/blog" class="back-link">← Back to Blog</a>
+  </div>
+  } @if (post()) {
+  <article class="blog-post">
+    <header class="post-header">
+      <a routerLink="/blog" class="back-link">← Back to Blog</a>
+      <div class="post-meta-header">
+        @if (post()?.category) {
+        <span class="category-badge">{{ post()?.category }}</span>
+        }
+        <span class="post-date">{{ post()?.publishedDate | date : 'longDate' }}</span>
+      </div>
+      <h1>{{ post()?.title }}</h1>
+      @if (post()?.tags && post()?.tags?.length! > 0) {
+      <div class="tags-container">
+        @for (tag of post()?.tags; track tag) {
+        <span class="tag-pill">#{{ tag }}</span>
+        }
+      </div>
+      }
+    </header>
+
+    @if (post()?.coverImage?.fields?.file?.url) {
+    <div class="post-cover">
+      <img [src]="post()?.coverImage?.fields?.file?.url" [alt]="post()?.title" />
+    </div>
+    }
+
+    <div class="post-content" [innerHTML]="contentHtml()"></div>
+  </article>
+  }
+</div>

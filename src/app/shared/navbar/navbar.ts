@@ -1,6 +1,7 @@
 import { Component, signal, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { RouterLink, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { filter } from 'rxjs/operators';
 import { ThemeService } from '../../services/theme.service';
 import { AnalyticsService } from '../../services/analytics.service';
 
@@ -22,9 +23,19 @@ export class NavbarComponent {
   constructor(
     protected themeService: ThemeService,
     private analyticsService: AnalyticsService,
+    private router: Router,
     @Inject(PLATFORM_ID) platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
+    
+    // Listen to route changes
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      if (event.url.startsWith('/blog')) {
+        this.activeSection.set('blog');
+      }
+    });
   }
 
   ngOnInit() {
@@ -35,6 +46,12 @@ export class NavbarComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (!this.isBrowser) return;
+
+    // Don't update active section on scroll if we are on the blog page
+    if (this.router.url.startsWith('/blog')) {
+      this.activeSection.set('blog');
+      return;
+    }
 
     const sections = ['home', 'about', 'projects', 'contact'];
     const scrollPosition = window.scrollY + 100; // Offset for navbar

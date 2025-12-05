@@ -1,0 +1,52 @@
+<div class="blog-container">
+  <header class="blog-header">
+    <h1 class="section-title text-gradient">Blog</h1>
+    <p>Technology, Thoughts, and Updates.</p>
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search posts by title..."
+        [ngModel]="searchQuery()"
+        (ngModelChange)="onSearchChange($event)"
+      />
+    </div>
+  </header>
+
+  @if (loading()) {
+  <div class="loading-spinner">Loading...</div>
+  } @if (!loading() && posts().length === 0) {
+  <div class="no-posts">
+    <p>No posts found.</p>
+  </div>
+  } @if (!loading() && posts().length > 0) {
+  <div class="blog-grid">
+    @for (post of posts(); track post.slug) {
+    <article class="blog-card">
+      <a [routerLink]="['/blog', post.slug]" class="card-link">
+        @if (post.coverImage?.fields?.file?.url) {
+        <div class="card-image">
+          <img [src]="post.coverImage?.fields?.file?.url" [alt]="post.title" />
+        </div>
+        }
+        <div class="card-content">
+          <div class="post-meta">
+            <span class="post-date">{{ post.publishedDate | date : 'mediumDate' }}</span>
+            @if (post.tags && post.tags.length > 0) {
+            <div class="tags-list">
+              @for (tag of post.tags.slice(0, 3); track tag) {
+              <span class="tag-badge">{{ tag }}</span>
+              }
+            </div>
+            }
+          </div>
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.excerpt }}</p>
+          <span class="read-more">Read more →</span>
+        </div>
+      </a>
+    </article>
+    }
+  </div>
+  }
+</div>
