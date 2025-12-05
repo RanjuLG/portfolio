@@ -2,6 +2,15 @@
   <header class="blog-header">
     <h1 class="section-title text-gradient">Blog</h1>
     <p>Technology, Thoughts, and Updates.</p>
+    <div class="search-container">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search posts by title..."
+        [ngModel]="searchQuery()"
+        (ngModelChange)="onSearchChange($event)"
+      />
+    </div>
   </header>
 
   @if (loading()) {
