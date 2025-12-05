@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --output-path=dist/portfolio --base-href=/ && cpy \"dist/portfolio/browser/index.html\" \"dist/portfolio/browser/404.html\"",
+    "build": "ng build --configuration production --output-path=dist/portfolio --base-href=/ && cpy dist/portfolio/browser/index.html dist/portfolio/browser --flat --rename 404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
