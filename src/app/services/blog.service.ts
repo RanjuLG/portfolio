@@ -10,6 +10,8 @@ export interface BlogPost {
   publishedDate: string;
   excerpt: string;
   content: any; // Rich Text
+  tags?: string[];
+  category?: string;
   coverImage?: {
     fields: {
       file: {
@@ -67,7 +69,7 @@ export class BlogService {
   getPosts(): Observable<BlogPost[]> {
     return from(this.client.withoutLinkResolution.getEntries({
       content_type: 'blog',
-      order: ['-fields.publishedDate']
+      order: ['-sys.createdAt']
     })).pipe(
       map((entries: any) => {
         const assetMap = this.createAssetMap(entries.includes);
@@ -95,9 +97,11 @@ export class BlogService {
           return {
             title: fields.title,
             slug: item.sys.id,
-            publishedDate: fields.publishedDate,
+            publishedDate: item.sys.createdAt,
             excerpt: fields.description,
             content: content,
+            tags: fields.tags,
+            category: fields.category,
             coverImage: coverImage
           } as BlogPost;
         });
@@ -138,9 +142,11 @@ export class BlogService {
           return {
             title: fields.title,
             slug: item.sys.id,
-            publishedDate: fields.publishedDate,
+            publishedDate: item.sys.createdAt,
             excerpt: fields.description,
             content: content,
+            tags: fields.tags,
+            category: fields.category,
             coverImage: coverImage
           } as BlogPost;
         }

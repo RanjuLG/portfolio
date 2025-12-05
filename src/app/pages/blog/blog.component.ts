@@ -21,6 +21,7 @@ export class BlogComponent implements OnInit {
       next: (posts) => {
         this.posts.set(posts);
         this.loading.set(false);
+        console.log(posts.at(0));
       },
       error: (err) => {
         console.error('Error fetching posts:', err);

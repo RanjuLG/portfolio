@@ -10,8 +10,20 @@
   <article class="blog-post">
     <header class="post-header">
       <a routerLink="/blog" class="back-link">← Back to Blog</a>
-      <span class="post-date">{{ post()?.publishedDate | date : 'longDate' }}</span>
+      <div class="post-meta-header">
+        @if (post()?.category) {
+        <span class="category-badge">{{ post()?.category }}</span>
+        }
+        <span class="post-date">{{ post()?.publishedDate | date : 'longDate' }}</span>
+      </div>
       <h1>{{ post()?.title }}</h1>
+      @if (post()?.tags && post()?.tags?.length! > 0) {
+      <div class="tags-container">
+        @for (tag of post()?.tags; track tag) {
+        <span class="tag-pill">#{{ tag }}</span>
+        }
+      </div>
+      }
     </header>
 
     @if (post()?.coverImage?.fields?.file?.url) {
