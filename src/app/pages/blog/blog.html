@@ -4,18 +4,22 @@
     <p>Technology, Thoughts, and Updates.</p>
   </header>
 
-  <div *ngIf="loading()" class="loading-spinner">Loading...</div>
-
-  <div *ngIf="!loading() && posts().length === 0" class="no-posts">
+  @if (loading()) {
+  <div class="loading-spinner">Loading...</div>
+  } @if (!loading() && posts().length === 0) {
+  <div class="no-posts">
     <p>No posts found.</p>
   </div>
-
+  } @if (!loading() && posts().length > 0) {
   <div class="blog-grid">
-    <article *ngFor="let post of posts()" class="blog-card">
+    @for (post of posts(); track post.slug) {
+    <article class="blog-card">
       <a [routerLink]="['/blog', post.slug]" class="card-link">
-        <div class="card-image" *ngIf="post.coverImage?.fields?.file?.url">
-          <img [src]="post.coverImage.fields.file.url" [alt]="post.title" />
+        @if (post.coverImage?.fields?.file?.url) {
+        <div class="card-image">
+          <img [src]="post.coverImage?.fields?.file?.url" [alt]="post.title" />
         </div>
+        }
         <div class="card-content">
           <span class="post-date">{{ post.publishedDate | date : 'mediumDate' }}</span>
           <h2>{{ post.title }}</h2>
@@ -24,5 +28,7 @@
         </div>
       </a>
     </article>
+    }
   </div>
+  }
 </div>

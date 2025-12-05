@@ -1,22 +1,26 @@
 <div class="blog-detail-container">
-  <div *ngIf="loading()" class="loading-spinner">Loading...</div>
-
-  <div *ngIf="!loading() && !post()" class="not-found">
+  @if (loading()) {
+  <div class="loading-spinner">Loading...</div>
+  } @if (!loading() && !post()) {
+  <div class="not-found">
     <h1>Post not found</h1>
     <a routerLink="/blog" class="back-link">← Back to Blog</a>
   </div>
-
-  <article *ngIf="post()" class="blog-post">
+  } @if (post()) {
+  <article class="blog-post">
     <header class="post-header">
       <a routerLink="/blog" class="back-link">← Back to Blog</a>
       <span class="post-date">{{ post()?.publishedDate | date : 'longDate' }}</span>
       <h1>{{ post()?.title }}</h1>
     </header>
 
-    <div class="post-cover" *ngIf="post()?.coverImage?.fields?.file?.url">
+    @if (post()?.coverImage?.fields?.file?.url) {
+    <div class="post-cover">
       <img [src]="post()?.coverImage?.fields?.file?.url" [alt]="post()?.title" />
     </div>
+    }
 
     <div class="post-content" [innerHTML]="contentHtml()"></div>
   </article>
+  }
 </div>

@@ -51,7 +51,8 @@
 
 .post-cover img {
   width: 100%;
-  height: auto;
+  max-height: 350px;
+  object-fit: cover;
   display: block;
 }
 
@@ -100,11 +101,13 @@
   color: var(--text-primary);
 }
 
-.post-content img {
+.embedded-image {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -115,5 +118,9 @@
   .blog-detail-container {
     padding: 1rem;
     padding-top: 80px;
+  }
+  
+  .post-cover img {
+    max-height: 300px;
   }
 }
