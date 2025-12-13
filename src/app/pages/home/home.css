@@ -36,21 +36,42 @@
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 0;
 }
+
+/* Content Group Spacing */
+.hero-identity {
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-description {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.hero-credentials {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.hero-ctas {
+  margin-bottom: var(--spacing-3xl);
+}
+
+
 
 .hero-greeting {
   font-size: var(--text-xl);
   color: var(--text-secondary);
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 var(--spacing-sm) 0;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .hero-name {
   font-size: var(--text-6xl);
   font-weight: 800;
   line-height: 1.1;
-  margin: 0;
+  margin: 0 0 var(--spacing-md) 0;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
 }
 
 .hero-role {
@@ -58,6 +79,7 @@
   color: var(--text-primary);
   font-weight: 600;
   margin: 0;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 .hero-title {
   font-size: var(--text-1xl);
@@ -69,23 +91,24 @@
 .hero-tagline {
   font-size: var(--text-xl);
   color: var(--text-secondary);
-  max-width: 500px;
-  line-height: 1.6;
-  margin-top: var(--spacing-sm);
+  max-width: 550px;
+  line-height: 1.7;
+  margin: 0;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 
 .hero-actions {
   display: flex;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  animation: fadeInUp 0.6s ease-out 0.5s both;
 }
 
 /* Tech Stack Hero Section */
 .tech-stack-hero {
   display: flex;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-lg);
   padding: 0;
+  animation: fadeInUp 0.6s ease-out 0.4s both;
 }
 
 .tech-stack-item {
@@ -177,7 +200,7 @@
 .social-links-hero {
   display: flex;
   gap: var(--spacing-lg);
-  margin-top: var(--spacing-2xl);
+  animation: fadeInUp 0.6s ease-out 0.6s both;
 }
 
 .social-link {
@@ -233,6 +256,17 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -299,6 +333,13 @@
 
   .hero-text {
     align-items: center;
+  }
+
+  .hero-identity,
+  .hero-description,
+  .hero-credentials,
+  .hero-ctas {
+    margin-bottom: var(--spacing-2xl);
   }
 
   .hero-name {
