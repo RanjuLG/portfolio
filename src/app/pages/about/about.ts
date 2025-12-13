@@ -17,6 +17,17 @@ interface TimelineItem {
   details?: string[];
   clients?: string[];
   projects?: string[];
+  logo?: string;
+  logoAlt?: string;
+  technologies?: string[];
+  startDate?: string;
+  endDate?: string;
+  isCurrent?: boolean;
+}
+
+interface ParsedProject {
+  name: string;
+  technologies: string[];
 }
 
 import { PROFILE_CONFIG } from '../../config/profile.config';
@@ -29,6 +40,8 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
 })
 export class AboutComponent {
   protected readonly config = PROFILE_CONFIG;
+  private expandedSections = new Set<string>();
+
   constructor(
     private analyticsService: AnalyticsService,
     private seoService: SeoService
@@ -38,6 +51,44 @@ export class AboutComponent {
       description: 'Learn about my background, skills, and experience as a Full-Stack Developer.',
       slug: 'about'
     });
+  }
+
+  isExpanded(sectionId: string): boolean {
+    return this.expandedSections.has(sectionId);
+  }
+
+  toggleSection(sectionId: string): void {
+    if (this.expandedSections.has(sectionId)) {
+      this.expandedSections.delete(sectionId);
+    } else {
+      this.expandedSections.add(sectionId);
+    }
+  }
+
+  formatDuration(item: TimelineItem): string {
+    if (!item.startDate || !item.endDate) return item.duration;
+    
+    const start = new Date(item.startDate);
+    const end = item.endDate === 'present' ? new Date() : new Date(item.endDate);
+    
+    const months = (end.getFullYear() - start.getFullYear()) * 12 
+                  + (end.getMonth() - start.getMonth());
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    
+    const parts = [];
+    if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);
+    if (remainingMonths > 0) parts.push(`${remainingMonths} month${remainingMonths > 1 ? 's' : ''}`);
+    
+    return parts.length > 0 ? `${item.duration} (${parts.join(' ')})` : item.duration;
+  }
+
+  parseProject(projectString: string): ParsedProject {
+    const parts = projectString.split(' - ');
+    const name = parts[0]?.trim() || '';
+    const techStack = parts[1] ? parts[1].split(',').map(t => t.trim()) : [];
+    
+    return { name, technologies: techStack };
   }
 
   trackResumeDownload() {
@@ -87,7 +138,13 @@ export class AboutComponent {
     {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
-      duration: '2023 - present',
+      duration: 'Aug 2023 - Present',
+      startDate: '2023-08-01',
+      endDate: 'present',
+      isCurrent: true,
+      logo: 'assets/companies/dsp.png',
+      logoAlt: 'DSP Engineering Solutions',
+      technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'Azure', 'C#', 'TypeScript'],
       description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
       details: [
         'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',
@@ -100,8 +157,7 @@ export class AboutComponent {
         'Integration of Maintenance Management System with User Management System - ASP.NET Core Web API, Angular',
         'Tenant Billing System Configuration Module - ASP.NET Core Web API, Angular, SQL Server',
         'Windows Desktop Application for Licence Verification - C# Windows Forms'
-      ]
-      ,
+      ],
       clients: [
         'Nanyang Technological University (NTU) - Singapore',
         'Singapore University of Technology and Design (SUTD)',
