@@ -17,6 +17,8 @@ export class FooterComponent {
   navigateTo(section: string): void {
     if (section === 'home') {
       this.router.navigate(['/']);
+    } else if (section === 'blog') {
+      this.router.navigate(['/blog']);
     } else {
       this.router.navigate(['/'], { fragment: section });
     }

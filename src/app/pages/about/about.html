@@ -18,25 +18,31 @@
       <h2 class="content-title">Skills & Technologies</h2>
       <div class="skills-grid">
         @for (skillGroup of skills; track skillGroup.category) {
-          <div class="skill-card card" data-aos="fade-up" [attr.data-aos-delay]="100 * $index">
-            <div class="skill-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path [attr.d]="skillGroup.icon" fill="url(#skillGrad)"/>
-                <defs>
-                  <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:#007BFF"/>
-                    <stop offset="100%" style="stop-color:#0056b3"/>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-            <h3 class="skill-category">{{ skillGroup.category }}</h3>
-            <div class="skill-items">
-              @for (item of skillGroup.items; track item) {
-                <span class="badge badge-primary">{{ item }}</span>
-              }
-            </div>
+        <div class="skill-card card" data-aos="fade-up" [attr.data-aos-delay]="100 * $index">
+          <div class="skill-icon">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path [attr.d]="skillGroup.icon" fill="url(#skillGrad)" />
+              <defs>
+                <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color: #007bff" />
+                  <stop offset="100%" style="stop-color: #0056b3" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
+          <h3 class="skill-category">{{ skillGroup.category }}</h3>
+          <div class="skill-items">
+            @for (item of skillGroup.items; track item) {
+            <span class="badge badge-primary">{{ item }}</span>
+            }
+          </div>
+        </div>
         }
       </div>
     </div>
@@ -46,51 +52,79 @@
   <section class="timeline-section section-sm">
     <div class="container">
       <h2 class="content-title">Professional Experience</h2>
-      <div class="timeline">
-        @for (item of experience; track item.title + item.duration) {
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card" data-aos="fade-left">
-              <div class="timeline-header">
-                <h3 class="timeline-title">{{ item.title }}</h3>
-                <span class="timeline-duration badge badge-secondary">{{ item.duration }}</span>
+      <div class="timeline experience-timeline">
+        @for (item of experience; track item.title + item.duration; let idx = $index) {
+        <div class="timeline-item" [class.current]="item.isCurrent">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content card" data-aos="fade-left" [attr.data-aos-delay]="idx * 100">
+            <div class="timeline-header">
+              @if (item.logo) {
+              <div class="company-logo">
+                <img [src]="item.logo" [alt]="item.logoAlt || item.subtitle" />
               </div>
-              <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
-              <p class="timeline-description">{{ item.description }}</p>
-              
-              @if (item.details && item.details.length > 0) {
-                <div class="timeline-details">
-                  <h5 class="details-heading">Key Responsibilities:</h5>
-                  <ul class="details-list">
-                    @for (detail of item.details; track detail) {
-                      <li>{{ detail }}</li>
-                    }
-                  </ul>
-                </div>
-              }    
-              @if (item.projects && item.projects.length > 0) {
-                <div class="timeline-details">
-                  <h5 class="details-heading">Key Projects:</h5>
-                  <ul class="details-list">
-                    @for (project of item.projects; track project) {
-                      <li>{{ project }}</li>
-                    }
-                  </ul>
-                </div>
-
-                @if (item.clients && item.clients.length > 0) {
-                <div class="timeline-details">
-                  <h5 class="details-heading">Major Clients:</h5>
-                  <ul class="details-list">
-                    @for (client of item.clients; track client) {
-                      <li>{{ client }}</li>
-                    }
-                  </ul>
-                </div>
               }
+              <div class="timeline-header-content">
+                <div class="timeline-title-row">
+                  <h3 class="timeline-title">{{ item.title }}</h3>
+                  <span class="timeline-duration badge badge-secondary">{{
+                    formatDuration(item)
+                  }}</span>
+                </div>
+                <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
+              </div>
+            </div>
+
+            <p class="timeline-description">{{ item.description }}</p>
+
+            @if (item.technologies && item.technologies.length > 0) {
+            <div class="role-tech-stack">
+              @for (tech of item.technologies; track tech) {
+              <span class="badge badge-tech">{{ tech }}</span>
+              }
+            </div>
+            }
+
+            <div class="timeline-sections">
+              @if (item.details && item.details.length > 0) {
+              <div class="static-section">
+                <h5 class="details-heading">Key Responsibilities</h5>
+                <ul class="details-list">
+                  @for (detail of item.details; track detail) {
+                  <li>{{ detail }}</li>
+                  }
+                </ul>
+              </div>
+              } @if (item.projects && item.projects.length > 0) {
+              <div class="static-section">
+                <h5 class="details-heading">Key Projects</h5>
+                <div class="projects-list">
+                  @for (project of item.projects; track project) {
+                  <div class="project-item">
+                    <h6 class="project-name">{{ parseProject(project).name }}</h6>
+                    @if (parseProject(project).technologies.length > 0) {
+                    <div class="project-tech-stack">
+                      @for (tech of parseProject(project).technologies; track tech) {
+                      <span class="badge badge-sm">{{ tech }}</span>
+                      }
+                    </div>
+                    }
+                  </div>
+                  }
+                </div>
+              </div>
+              } @if (item.clients && item.clients.length > 0) {
+              <div class="static-section">
+                <h5 class="details-heading">Major Clients</h5>
+                <ul class="details-list">
+                  @for (client of item.clients; track client) {
+                  <li>{{ client }}</li>
+                  }
+                </ul>
+              </div>
               }
             </div>
           </div>
+        </div>
         }
       </div>
     </div>
@@ -102,17 +136,17 @@
       <h2 class="content-title">Education & Certifications</h2>
       <div class="timeline">
         @for (item of education; track item.title + item.duration) {
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content card" data-aos="fade-left">
-              <div class="timeline-header">
-                <h3 class="timeline-title">{{ item.title }}</h3>
-                <span class="timeline-duration badge badge-secondary">{{ item.duration }}</span>
-              </div>
-              <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
-              <p class="timeline-description">{{ item.description }}</p>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content card" data-aos="fade-left">
+            <div class="timeline-header">
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <span class="timeline-duration badge badge-secondary">{{ item.duration }}</span>
             </div>
+            <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
+            <p class="timeline-description">{{ item.description }}</p>
           </div>
+        </div>
         }
       </div>
     </div>
@@ -123,13 +157,22 @@
     <div class="container">
       <div class="resume-card card-glass" data-aos="zoom-in">
         <div class="resume-content">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="url(#resumeGrad)"/>
-            <path d="M14 2V8H20" stroke="white" stroke-width="2"/>
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z"
+              fill="url(#resumeGrad)"
+            />
+            <path d="M14 2V8H20" stroke="white" stroke-width="2" />
             <defs>
               <linearGradient id="resumeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#007BFF"/>
-                <stop offset="100%" style="stop-color:#0056b3"/>
+                <stop offset="0%" style="stop-color: #007bff" />
+                <stop offset="100%" style="stop-color: #0056b3" />
               </linearGradient>
             </defs>
           </svg>
@@ -137,9 +180,20 @@
             <h3>Download My Resume</h3>
             <p>Get a complete overview of my experience, skills, and education</p>
           </div>
-          <a [href]="config.urls.resume" download class="btn btn-primary" (click)="trackResumeDownload()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor"/>
+          <a
+            [href]="config.urls.resume"
+            download
+            class="btn btn-primary"
+            (click)="trackResumeDownload()"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M19 9H15V3H9V9H5L12 16L19 9ZM5 18V20H19V18H5Z" fill="currentColor" />
             </svg>
             Download PDF
           </a>
