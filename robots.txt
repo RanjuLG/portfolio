@@ -1,0 +1,12 @@
+# robots.txt for Ranju Gamage Portfolio
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ranjugamage.dev/sitemap.xml
+
+# Disallow crawling of dynamic/private paths if any
+Disallow: /api/
+Disallow: /assets/private/
