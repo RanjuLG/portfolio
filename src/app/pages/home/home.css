@@ -126,21 +126,35 @@
 }
 
 .tech-stack-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.08) 0%, rgba(0, 86, 179, 0.08) 100%);
-  border-radius: var(--radius-sm);
-  color: var(--primary);
+  border-radius: 6px;
   transition: all var(--transition-base);
 }
 
+.tech-stack-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.dotnet-bg {
+  background-color: #f3f1fb;
+}
+
+.angular-bg {
+  background-color: #fde8ea;
+}
+
+.azure-bg {
+  background-color: #e6f2fa;
+}
+
 .tech-stack-item:hover .tech-stack-icon {
-  background: var(--gradient-primary);
-  color: var(--white);
   transform: scale(1.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .tech-stack-icon svg {
