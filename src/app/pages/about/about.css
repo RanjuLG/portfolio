@@ -466,7 +466,12 @@
 }
 
 .timeline:not(.experience-timeline) .timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
   margin-bottom: var(--spacing-xs);
+  flex-wrap: wrap;
 }
 
 .timeline:not(.experience-timeline) .timeline-title {
