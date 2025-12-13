@@ -456,6 +456,32 @@
   background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(0, 86, 179, 0.05) 100%);
 }
 
+/* Compact timeline for Education section */
+.timeline:not(.experience-timeline) .timeline-item {
+  padding-bottom: var(--spacing-xl);
+}
+
+.timeline:not(.experience-timeline) .timeline-content {
+  padding: var(--spacing-lg);
+}
+
+.timeline:not(.experience-timeline) .timeline-header {
+  margin-bottom: var(--spacing-xs);
+}
+
+.timeline:not(.experience-timeline) .timeline-title {
+  font-size: var(--text-lg);
+}
+
+.timeline:not(.experience-timeline) .timeline-subtitle {
+  font-size: var(--text-base);
+}
+
+.timeline:not(.experience-timeline) .timeline-description {
+  margin: var(--spacing-xs) 0 0 0;
+  font-size: var(--text-sm);
+}
+
 .resume-card {
   max-width: 800px;
   margin: 0 auto;
