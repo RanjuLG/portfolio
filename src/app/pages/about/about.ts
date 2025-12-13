@@ -144,7 +144,7 @@ export class AboutComponent {
       isCurrent: true,
       logo: 'assets/companies/dsp.png',
       logoAlt: 'DSP Engineering Solutions',
-      technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'Azure', 'C#', 'TypeScript'],
+      technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'C#', 'TypeScript'],
       description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
       details: [
         'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',

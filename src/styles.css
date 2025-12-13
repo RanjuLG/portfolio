@@ -592,3 +592,36 @@ a:hover {
   color: var(--primary);
   font-weight: 600;
 }
+
+/* ========================================
+   STANDARDIZED HOVER ANIMATIONS
+   ======================================== */
+
+/* Standard hover lift effect - for cards */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Subtle hover lift - for buttons and smaller elements */
+.hover-lift-sm {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift-sm:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Scale hover effect */
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}

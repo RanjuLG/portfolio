@@ -175,6 +175,23 @@
   background-color: #e6f2fa;
 }
 
+/* Dark mode overrides for tech stack icons */
+:host-context([data-theme="dark"]) .tech-stack-item {
+  background: var(--gray-100);
+}
+
+:host-context([data-theme="dark"]) .dotnet-bg {
+  background-color: rgba(81, 40, 136, 0.35);
+}
+
+:host-context([data-theme="dark"]) .angular-bg {
+  background-color: rgba(221, 0, 49, 0.3);
+}
+
+:host-context([data-theme="dark"]) .azure-bg {
+  background-color: rgba(0, 120, 212, 0.3);
+}
+
 .tech-stack-item:hover .tech-stack-icon {
   transform: scale(1.05);
   box-shadow: var(--shadow-sm);
@@ -217,7 +234,7 @@
 }
 
 .social-link:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   background: var(--gradient-primary);
   color: var(--white);
