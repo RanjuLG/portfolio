@@ -261,6 +261,11 @@
   font-size: var(--text-base);
   color: var(--text-secondary);
   line-height: 1.8;
+  margin: var(--spacing-md) 0;
+}
+
+/* Enhanced styling for Professional Experience descriptions only */
+.experience-timeline .timeline-description {
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-md);
   background: linear-gradient(

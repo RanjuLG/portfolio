@@ -52,7 +52,7 @@
   <section class="timeline-section section-sm">
     <div class="container">
       <h2 class="content-title">Professional Experience</h2>
-      <div class="timeline">
+      <div class="timeline experience-timeline">
         @for (item of experience; track item.title + item.duration; let idx = $index) {
         <div class="timeline-item" [class.current]="item.isCurrent">
           <div class="timeline-dot"></div>
