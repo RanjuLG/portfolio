@@ -1,8 +1,8 @@
 [
   {
   "id": "sms-gold-pawning",
-  "name": "Shop Management System (SMS)",
-  "shortDescription": "Comprehensive shop management system designed for gold pawning businesses with real-time transaction tracking and role-based access control.",
+  "name": "Service Management System (SMS)",
+  "shortDescription": "Comprehensive service management system designed for gold pawning businesses with real-time transaction tracking and role-based access control.",
   "fullDescription": "A full-stack enterprise solution for gold pawning shops that streamlines inventory management, invoicing, loan processing, customer tracking, and financial reporting. The system features a modern Angular-based frontend with Material Design components and a robust .NET 8 Web API backend with Entity Framework Core for data persistence. Implements JWT authentication, automated background services for loan maintenance, and comprehensive reporting capabilities.",
   "technologies": [
     "Angular 18",
@@ -49,7 +49,19 @@
   ],
   "githubUrlFE": "https://github.com/RanjuLG/SMS-GUI",
   "githubUrlBE": "https://github.com/RanjuLG/SMS-API",
-  "liveUrl": ""
+  "liveUrl": "https://mango-wave-093aa4500.3.azurestaticapps.net",
+  "demoCredentials": [
+    {
+      "userType": "Admin",
+      "username": "admin",
+      "password": "Admin@123"
+    },
+    {
+      "userType": "Cashier",
+      "username": "cashier",
+      "password": "Cashier@123"
+    }
+  ]
   },
   {
     "id": "taskmate",
