@@ -134,12 +134,43 @@
   color: var(--text-primary);
   transition: all var(--transition-fast);
   box-shadow: var(--shadow-sm);
+  position: relative;
 }
 
 .project-link:hover {
   background: var(--primary);
   color: var(--white);
   transform: scale(1.1);
+}
+
+.project-link.has-credentials {
+  border: 2px solid var(--green-500);
+}
+
+.project-link.has-credentials:hover .credentials-badge {
+  background: var(--white);
+  color: var(--green-600);
+}
+
+.credentials-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: var(--green-500);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--white);
+}
+
+.credentials-badge svg {
+  width: 10px;
+  height: 10px;
 }
 
 .btn-view-details {

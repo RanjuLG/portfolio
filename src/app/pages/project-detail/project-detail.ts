@@ -15,6 +15,7 @@ export class ProjectDetailComponent implements OnInit {
   protected readonly error = signal<string | null>(null);
   protected readonly selectedImage = signal<string | null>(null);
   protected readonly currentImageIndex = signal<number>(0);
+  protected readonly credentialsExpanded = signal<boolean>(false);
 
   constructor(
     private route: ActivatedRoute,
@@ -94,5 +95,9 @@ export class ProjectDetailComponent implements OnInit {
     const prevIndex = (this.currentImageIndex() - 1 + screenshots.length) % screenshots.length;
     this.currentImageIndex.set(prevIndex);
     this.selectedImage.set(this.getImageUrl(screenshots[prevIndex]));
+  }
+
+  toggleCredentials() {
+    this.credentialsExpanded.set(!this.credentialsExpanded());
   }
 }

@@ -3,6 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
+export interface DemoCredential {
+  userType: string;
+  username: string;
+  password: string;
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -17,6 +23,7 @@ export interface Project {
   githubUrlBE: string;
   liveUrl: string;
   ongoing?: boolean;
+  demoCredentials?: DemoCredential[];
 }
 
 @Injectable({
