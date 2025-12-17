@@ -94,7 +94,7 @@ export class AboutComponent {
   trackResumeDownload() {
     this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
   }
-  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web and mobile applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
+  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [
     {
@@ -104,7 +104,7 @@ export class AboutComponent {
     },
     {
       category: 'Frontend',
-      items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
+      items: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
       icon: 'M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'
     },
     {
@@ -114,7 +114,7 @@ export class AboutComponent {
     },
     {
       category: 'Database',
-      items: ['SQL Server', 'PostgreSQL', 'MySQL', 'MongoDB'],
+      items: ['SQL Server', 'MySQL', 'MongoDB'],
       icon: 'M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zm8 6c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9zm0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3z'
     },
     {
@@ -138,9 +138,9 @@ export class AboutComponent {
     {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
-      duration: 'Aug 2023 - Present',
+      duration: 'Aug 2023 - Oct 2025',
       startDate: '2023-08-01',
-      endDate: 'present',
+      endDate: '2025-10-01',
       isCurrent: true,
       logo: 'assets/companies/dsp.png',
       logoAlt: 'DSP Engineering Solutions',

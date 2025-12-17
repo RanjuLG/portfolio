@@ -2,12 +2,13 @@
   min-height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
-  margin-left: 280px;
-  transition: margin-left var(--transition-base);
+  margin-left: 0; /* No sidebar margin */
+  padding-top: 70px; /* Account for fixed top nav */
+  transition: padding-top var(--transition-base);
 }
 
 @media (max-width: 1024px) {
   .main-content {
-    margin-left: 0;
+    padding-top: 64px; /* Slightly smaller for mobile */
   }
 }

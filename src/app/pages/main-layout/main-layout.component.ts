@@ -45,6 +45,18 @@ import { ContactComponent } from '../contact/contact';
       color: var(--text-secondary);
       font-size: 1.2rem;
     }
+    
+    /* Anchor offset fix - creates invisible space above sections */
+    section[id] {
+      padding-top: 80px;
+      margin-top: -80px;
+    }
+    
+    /* First section doesn't need the offset since it's already at top */
+    section#home {
+      padding-top: 0;
+      margin-top: 0;
+    }
   `]
 })
 export class MainLayoutComponent {}

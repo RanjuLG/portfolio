@@ -2,50 +2,39 @@
   <div class="footer-divider"></div>
   <div class="footer-container container">
     <div class="footer-content">
-      <div class="footer-section">
+      <div class="footer-section footer-main">
         <h3 class="footer-title">{{ config.personal.name }}</h3>
         <p class="footer-text">
           Software Engineer passionate about creating exceptional digital experiences.
         </p>
-      </div>
 
-      <div class="footer-section">
-        <h4 class="footer-subtitle">Quick Links</h4>
-        <div class="footer-links">
-          <a (click)="navigateTo('home')" class="footer-link">Home</a>
-          <a (click)="navigateTo('about')" class="footer-link">About</a>
-          <a (click)="navigateTo('projects')" class="footer-link">Projects</a>
-          <a (click)="navigateTo('blog')" class="footer-link">Blog</a>
-          <a (click)="navigateTo('contact')" class="footer-link">Contact</a>
-        </div>
-      </div>
+        <div class="footer-connect">
+          <div class="social-links">
+            @for (link of socialLinks; track link.name) {
+            <a
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="link.name"
+              class="social-link"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon">
+                <path [attr.d]="link.icon" fill="currentColor" />
+              </svg>
+            </a>
+            }
+          </div>
 
-      <div class="footer-section">
-        <h4 class="footer-subtitle">Connect</h4>
-        <div class="social-links">
-          @for (link of socialLinks; track link.name) {
-          <a
-            [href]="link.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            [attr.aria-label]="link.name"
-            class="social-link"
-          >
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-icon">
-              <path [attr.d]="link.icon" fill="currentColor" />
+          <p class="footer-email">
+            <svg viewBox="0 0 24 24" class="email-icon" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                fill="currentColor"
+              />
             </svg>
-          </a>
-          }
+            {{ config.personal.email }}
+          </p>
         </div>
-        <p class="footer-email">
-          <svg viewBox="0 0 24 24" class="email-icon" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-              fill="currentColor"
-            />
-          </svg>
-          {{ config.personal.email }}
-        </p>
       </div>
     </div>
 
@@ -53,7 +42,7 @@
       <p class="copyright">
         &copy; {{ currentYear }} {{ config.personal.name }}. All rights reserved.
       </p>
-      <p class="footer-note">Built with <span class="heart">❤️</span> using Angular</p>
+      <!-- <p class="footer-note">Built with <span class="heart">❤️</span> using Angular</p> -->
     </div>
   </div>
 </footer>
