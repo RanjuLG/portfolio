@@ -2,7 +2,7 @@
   background: var(--bg-secondary);
   color: var(--text-primary);
   margin-top: auto;
-  margin-left: 280px;
+  margin-left: 0; /* No sidebar margin */
   transition: margin-left var(--transition-base);
 }
 
@@ -172,9 +172,5 @@
 
   .footer-connect {
     flex-direction: column;
-  }
-
-  .footer {
-    margin-left: 0;
   }
 }
