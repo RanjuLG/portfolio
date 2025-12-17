@@ -104,7 +104,7 @@ export class AboutComponent {
     },
     {
       category: 'Frontend',
-      items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
+      items: ['Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3'],
       icon: 'M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z'
     },
     {
@@ -114,7 +114,7 @@ export class AboutComponent {
     },
     {
       category: 'Database',
-      items: ['SQL Server', 'PostgreSQL', 'MySQL', 'MongoDB'],
+      items: ['SQL Server', 'MySQL', 'MongoDB'],
       icon: 'M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zm8 6c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9zm0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3z'
     },
     {
