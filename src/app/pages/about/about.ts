@@ -94,7 +94,7 @@ export class AboutComponent {
   trackResumeDownload() {
     this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
   }
-  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web and mobile applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
+  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [
     {
@@ -138,9 +138,9 @@ export class AboutComponent {
     {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
-      duration: 'Aug 2023 - Present',
+      duration: 'Aug 2023 - Oct 2025',
       startDate: '2023-08-01',
-      endDate: 'present',
+      endDate: '2025-10-01',
       isCurrent: true,
       logo: 'assets/companies/dsp.png',
       logoAlt: 'DSP Engineering Solutions',
