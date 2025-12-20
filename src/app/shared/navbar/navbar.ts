@@ -1,4 +1,4 @@
-import { Component, signal, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, signal, HostListener, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -11,7 +11,8 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
   selector: 'app-navbar',
   imports: [RouterLink, CommonModule],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.css'
+  styleUrl: './navbar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);

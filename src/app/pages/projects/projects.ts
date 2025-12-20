@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProjectsService, Project } from '../../services/projects.service';
@@ -8,7 +8,8 @@ import { SeoService } from '../../services/seo.service';
   selector: 'app-projects',
   imports: [CommonModule],
   templateUrl: './projects.html',
-  styleUrl: './projects.css'
+  styleUrl: './projects.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectsComponent implements OnInit {
   protected readonly projects = signal<Project[]>([]);

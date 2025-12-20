@@ -117,7 +117,14 @@
 
         <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
           <div class="image-placeholder">
-            <img src="me.webp" [alt]="config.personal.name" class="profile-img" />
+            <img
+              ngSrc="me.webp"
+              [alt]="config.personal.name"
+              class="profile-img"
+              width="400"
+              height="400"
+              priority
+            />
           </div>
         </div>
       </div>

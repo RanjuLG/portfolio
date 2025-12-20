@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { AnalyticsService } from '../../services/analytics.service';
 import { SeoService } from '../../services/seo.service';
 
@@ -8,9 +8,10 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, NgOptimizedImage],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
   protected readonly config = PROFILE_CONFIG;
