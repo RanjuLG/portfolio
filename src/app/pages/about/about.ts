@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnalyticsService } from '../../services/analytics.service';
 import { SeoService } from '../../services/seo.service';
@@ -36,7 +36,8 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
   selector: 'app-about',
   imports: [CommonModule],
   templateUrl: './about.html',
-  styleUrl: './about.css'
+  styleUrl: './about.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent {
   protected readonly config = PROFILE_CONFIG;
