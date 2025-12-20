@@ -60,7 +60,7 @@
             <div class="timeline-header">
               @if (item.logo) {
               <div class="company-logo">
-                <img [src]="item.logo" [alt]="item.logoAlt || item.subtitle" />
+                <img [src]="item.logo" [alt]="item.logoAlt || item.subtitle" loading="lazy" />
               </div>
               }
               <div class="timeline-header-content">
