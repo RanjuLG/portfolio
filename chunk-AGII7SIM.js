@@ -1,1 +1,0 @@
-import{Q as c}from"./chunk-NIHET7X6.js";var i=class t{constructor(){}trackEvent(r,o,e,n){console.log(`[Analytics] ${r} - ${o}: ${e}`,n?`(${n})`:"")}static \u0275fac=function(o){return new(o||t)};static \u0275prov=c({token:t,factory:t.\u0275fac,providedIn:"root"})};export{i as a};
