@@ -137,12 +137,27 @@ export class AboutComponent {
 
   protected readonly experience: TimelineItem[] = [
     {
+      title: 'Senior Software Engineer',
+      subtitle: 'Softvil Technologies',
+      duration: 'Jan 2026 - Present',
+      startDate: '2026-01-01',
+      endDate: 'Present',
+      isCurrent: true,
+      logo: 'assets/companies/softvil.webp',
+      logoAlt: 'Softvil Technologies',
+      technologies: [],
+      description: 'Deployed at John Keells IT',
+      details: [
+        
+      ]
+    },
+    {
       title: 'Software Engineer',
       subtitle: 'DSP Engineering Solutions Pvt. Ltd.',
       duration: 'Aug 2023 - Oct 2025',
       startDate: '2023-08-01',
       endDate: '2025-10-01',
-      isCurrent: true,
+      isCurrent: false,
       logo: 'assets/companies/dsp.png',
       logoAlt: 'DSP Engineering Solutions',
       technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'C#', 'TypeScript'],
@@ -166,6 +181,7 @@ export class AboutComponent {
         'Marina One - Singapore'
       ]
     }
+    
   ];
 
   protected readonly education: TimelineItem[] = [
