@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/services/analytics.service.ts"],
+  "sourcesContent": ["import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AnalyticsService {\n  \n  constructor() { }\n\n  /**\n   * Track a user event\n   * @param category Event category (e.g., 'Engagement', 'Navigation')\n   * @param action Event action (e.g., 'Click', 'Scroll')\n   * @param label Event label (e.g., 'Download Resume', 'View Project')\n   * @param value Optional numeric value\n   */\n  trackEvent(category: string, action: string, label: string, value?: number): void {\n    // In a real app, this would send data to Google Analytics, Mixpanel, etc.\n    // For now, we'll log it to the console to demonstrate functionality.\n    console.log(`[Analytics] ${category} - ${action}: ${label}`, value ? `(${value})` : '');\n  }\n}\n"],
+  "mappings": "wCAKA,IAAaA,GAAgB,IAAA,CAAvB,MAAOA,CAAgB,CAE3BC,aAAA,CAAgB,CAShBC,WAAWC,EAAkBC,EAAgBC,EAAeC,EAAc,CAGxEC,QAAQC,IAAI,eAAeL,CAAQ,MAAMC,CAAM,KAAKC,CAAK,GAAIC,EAAQ,IAAIA,CAAK,IAAM,EAAE,CACxF,4CAfWN,EAAgB,6BAAhBA,EAAgBS,QAAhBT,EAAgBU,UAAAC,WAFf,MAAM,CAAA,SAEPX,CAAgB,GAAA",
+  "names": ["AnalyticsService", "constructor", "trackEvent", "category", "action", "label", "value", "console", "log", "factory", "\u0275fac", "providedIn"]
+}

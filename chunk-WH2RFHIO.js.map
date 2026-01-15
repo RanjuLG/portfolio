@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/config/profile.config.ts"],
+  "sourcesContent": ["export const PROFILE_CONFIG = {\n  personal: {\n    name: 'Ranju Gamage',\n    role: 'Software Engineer',\n    email: 'ranju@ranjugamage.dev',\n    location: 'Sri Lanka'\n  },\n  social: {\n    github: 'https://github.com/RanjuLG',\n    linkedin: 'https://linkedin.com/in/ranju-laksahan',\n    twitter: ''\n  },\n  urls: {\n    resume: 'Ranju_Gamage_Resume.pdf',\n    baseUrl: 'https://ranjugamage.dev'\n  },\n  seo: {\n    siteName: 'Ranju Gamage - Software Engineer'\n  },\n  availability: {\n    status: true,\n    title: 'Currently Available',\n    message: 'Open to new opportunities and freelance projects'\n  }\n};\n"],
+  "mappings": "AAAO,IAAMA,EAAiB,CAC5BC,SAAU,CACRC,KAAM,eACNC,KAAM,oBACNC,MAAO,wBACPC,SAAU,aAEZC,OAAQ,CACNC,OAAQ,6BACRC,SAAU,yCACVC,QAAS,IAEXC,KAAM,CACJC,OAAQ,0BACRC,QAAS,2BAEXC,IAAK,CACHC,SAAU,oCAEZC,aAAc,CACZC,OAAQ,GACRC,MAAO,sBACPC,QAAS",
+  "names": ["PROFILE_CONFIG", "personal", "name", "role", "email", "location", "social", "github", "linkedin", "twitter", "urls", "resume", "baseUrl", "seo", "siteName", "availability", "status", "title", "message"]
+}

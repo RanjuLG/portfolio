@@ -7,16 +7,30 @@
     <link rel="preconnect" href="https://upload.wikimedia.org">
     <link rel="preconnect" href="https://angular.io">
 
-    <!-- Google tag (gtag.js) - Deferred for performance -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-TV6CWWTH8B"></script>
+    <!-- Google tag (gtag.js) - Delayed initialization for performance -->
     <script>
+      // Delay GTM loading until the browser is idle
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-TV6CWWTH8B');
+
+      // Load GTM script after page is interactive
+      function loadGTM() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TV6CWWTH8B';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+
+      // Use requestIdleCallback for better performance, fallback to setTimeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGTM);
+      } else {
+        setTimeout(loadGTM, 2000);
+      }
     </script>
     <meta charset="utf-8">
     <title>Ranju Gamage</title>
@@ -53,5 +67,5 @@
     <app-root></app-root>
     <!-- AOS JS - Deferred for performance -->
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="modulepreload" href="chunk-PMG43OVP.js"><link rel="modulepreload" href="chunk-RNG3NITL.js"><link rel="modulepreload" href="chunk-CVYTXZCY.js"><link rel="modulepreload" href="chunk-GXRSPQCG.js"><script src="main-XOVLTHB3.js" type="module"></script></body>
+  <link rel="modulepreload" href="chunk-VSNN4REY.js"><link rel="modulepreload" href="chunk-WH2RFHIO.js"><link rel="modulepreload" href="chunk-CR6XKEXB.js"><link rel="modulepreload" href="chunk-2G6NCCEV.js"><script src="main-GBWXWKX4.js" type="module"></script></body>
 </html>
