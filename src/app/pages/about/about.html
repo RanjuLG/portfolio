@@ -66,11 +66,17 @@
               <div class="timeline-header-content">
                 <div class="timeline-title-row">
                   <h3 class="timeline-title">{{ item.title }}</h3>
-                  <span class="timeline-duration badge badge-secondary">{{
-                    formatDuration(item)
-                  }}</span>
                 </div>
                 <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
+                <div class="experience-meta">
+                  <span class="timeline-duration badge badge-secondary">{{ formatDuration(item) }}</span>
+                  @if (item.location) {
+                  <span class="meta-chip">{{ item.location }}</span>
+                  }
+                  @if (item.assignment) {
+                  <span class="meta-chip meta-chip-highlight">{{ item.assignment }}</span>
+                  }
+                </div>
               </div>
             </div>
 

@@ -14,6 +14,8 @@ interface TimelineItem {
   subtitle: string;
   duration: string;
   description: string;
+  location?: string;
+  assignment?: string;
   details?: string[];
   clients?: string[];
   projects?: string[];
@@ -138,17 +140,24 @@ export class AboutComponent {
   protected readonly experience: TimelineItem[] = [
     {
       title: 'Senior Software Engineer',
-      subtitle: 'Softvil Technologies',
+      subtitle: 'Softvil Technologies Pvt. Ltd.',
       duration: 'Jan 2026 - Present',
       startDate: '2026-01-01',
       endDate: 'Present',
       isCurrent: true,
       logo: 'assets/companies/softvil.webp',
       logoAlt: 'Softvil Technologies',
-      technologies: [],
-      description: 'Deployed at John Keells IT',
+      technologies: ['ASP.NET Core 3.1 Web API', 'ASP.NET Core MVC', 'C#', '.NET', 'SQL Server', 'Angular'],
+      description: 'Deployed at John Keells IT to deliver enterprise-grade solutions for Teejay Lanka PLC.',
+      location: 'Colombo, Sri Lanka',
+      assignment: 'Deployed at John Keells IT',
       details: [
-        
+        'Develop production-ready features across backend and web applications using ASP.NET Core 3.1 Web API and ASP.NET Core MVC',
+        'Translate business requirements into maintainable, high-quality implementations aligned with clean architecture principles',
+        'Collaborate with cross-functional teams, business analysts, and QA engineers to improve performance, reliability, and delivery quality'
+      ],
+      projects: [
+        'Product Life Cycle Management System (PLMS) - ASP.NET Core 3.1 Web API, ASP.NET Core MVC, SQL Server'
       ]
     },
     {
@@ -160,19 +169,19 @@ export class AboutComponent {
       isCurrent: false,
       logo: 'assets/companies/dsp.png',
       logoAlt: 'DSP Engineering Solutions',
-      technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'C#', 'TypeScript'],
-      description: 'Designing and developing building automation software solutions for Singapore-based clients using .NET and Angular.',
+      technologies: ['.NET', 'Angular', 'SQL Server', 'MongoDB', 'C#', 'TypeScript', 'Windows Service', 'REST API'],
+      description: 'Built and delivered scalable building automation platforms for Singapore-based clients as a full-stack engineer.',
+      location: 'Kandy, Sri Lanka',
       details: [
-        'Work closely with stakeholders throughout the Software Development Life Cycle (SDLC) — from requirement gathering to software design, testing, deployment, and ongoing maintenance',
-        'Responsible for deploying applications to production servers, ensuring stability and smooth operation in live environments',
-        'Designed and implemented RESTful APIs and Services to streamline data communication and improve system efficiency',
-        'Developed Windows services for real-time data processing and analytics, enhancing system performance'
+        'Designed and developed end-to-end software solutions using .NET, Angular, and Microsoft SQL Server for enterprise facility operations',
+        'Partnered with stakeholders across the full SDLC, including requirement gathering, solution design, testing, deployment, and support',
+        'Led production deployments and release activities to maintain system stability and high availability in live environments',
+        'Engineered RESTful APIs and background Windows services to improve real-time processing, integration, and platform performance'
       ],
       projects: [
-        'Energy Management System - ASP.NET Core Web API, Windows Service (.NET Framework), Angular, SQL Server, MongoDB',
-        'Integration of Maintenance Management System with User Management System - ASP.NET Core Web API, Angular',
-        'Tenant Billing System Configuration Module - ASP.NET Core Web API, Angular, SQL Server',
-        'Windows Desktop Application for Licence Verification - C# Windows Forms'
+        'Energy Management System (EMS) - ASP.NET Core Web API, Windows Service (.NET Framework), Angular, SQL Server, MongoDB',
+        'Maintenance Management System (MMS) with SSO Integration - ASP.NET Core Web API, Angular, SSO User Management Integration',
+        'Facility Booking System with TimeEdit Integration - ASP.NET Core Web API, Angular, API Integration, UAT'
       ],
       clients: [
         'Nanyang Technological University (NTU) - Singapore',
