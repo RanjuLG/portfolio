@@ -148,10 +148,12 @@
                 <h2 class="section-heading">Screenshots</h2>
                 <div class="screenshots-grid">
                   @for (screenshot of project()!.screenshots; track screenshot; let i = $index) {
-                    <img 
-                      [src]="getImageUrl(screenshot)" 
-                      [alt]="project()!.name + ' screenshot'" 
+                    <img
+                      [src]="getImageUrl(screenshot)"
+                      [alt]="project()!.name + ' screenshot'"
                       class="screenshot"
+                      loading="lazy"
+                      decoding="async"
                       (click)="openImage(screenshot, i)">
                   }
                 </div>
@@ -261,7 +263,7 @@
           </button>
         }
         
-        <img [src]="selectedImage()" [alt]="project()!.name + ' enlarged screenshot'" class="lightbox-image">
+        <img [src]="selectedImage()" [alt]="project()!.name + ' enlarged screenshot'" class="lightbox-image" loading="lazy" decoding="async" />
         
         <div class="lightbox-counter">
           {{ currentImageIndex() + 1 }} / {{ project()!.screenshots.length }}

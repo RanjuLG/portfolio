@@ -2,8 +2,7 @@
    MODERN PORTFOLIO DESIGN SYSTEM
    ======================================== */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+/* Google Fonts are preloaded in index.html to avoid render-blocking */
 
 /* ========================================
    CSS RESET & BASE STYLES

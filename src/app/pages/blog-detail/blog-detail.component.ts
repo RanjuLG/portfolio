@@ -48,7 +48,7 @@ export class BlogDetailComponent implements OnInit {
                   if (url.startsWith('//')) {
                     url = 'https:' + url;
                   }
-                  return `<img src="${url}" alt="${asset.fields.title || 'Image'}" class="embedded-image" />`;
+                  return `<img src="${url}" alt="${asset.fields.title || 'Image'}" class="embedded-image" loading="lazy" decoding="async" fetchpriority="low" />`;
                 }
                 return '';
               }
