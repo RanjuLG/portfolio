@@ -26,7 +26,7 @@
       <a [routerLink]="['/blog', post.slug]" class="card-link">
         @if (post.coverImage?.fields?.file?.url) {
         <div class="card-image">
-          <img [src]="post.coverImage?.fields?.file?.url" [alt]="post.title" />
+          <img [src]="post.coverImage?.fields?.file?.url" [alt]="post.title" loading="lazy" decoding="async" />
         </div>
         }
         <div class="card-content">

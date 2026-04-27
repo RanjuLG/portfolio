@@ -28,7 +28,7 @@
 
     @if (post()?.coverImage?.fields?.file?.url) {
     <div class="post-cover">
-      <img [src]="post()?.coverImage?.fields?.file?.url" [alt]="post()?.title" />
+      <img [src]="post()?.coverImage?.fields?.file?.url" [alt]="post()?.title" loading="lazy" decoding="async" />
     </div>
     }
 
