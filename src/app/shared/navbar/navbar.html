@@ -1,6 +1,11 @@
 <!-- Top Navigation Bar -->
 <nav class="top-navbar">
   <div class="navbar-container">
+    <!-- Wordmark -->
+    <a routerLink="/" fragment="home" class="navbar-brand" (click)="closeMenu()">
+      <span class="brand-mark">RG</span><span class="brand-word">ranju<strong>gamage</strong></span>
+    </a>
+
     <!-- Navigation Links - Centered -->
     <ul class="nav-links">
       <li>
@@ -117,21 +122,21 @@
           </span>
         </span>
       </button>
-    </div>
 
-    <!-- Mobile Menu Toggle -->
-    <button
-      class="mobile-toggle"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="isMenuOpen()"
-      aria-label="Toggle navigation menu"
-    >
-      <span class="hamburger" [class.active]="isMenuOpen()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </button>
+      <!-- Mobile Menu Toggle -->
+      <button
+        class="mobile-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="hamburger" [class.active]="isMenuOpen()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Menu -->
