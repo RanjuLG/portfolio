@@ -74,7 +74,7 @@
   font-size: var(--text-base);
   color: var(--text-primary);
   background: var(--white);
-  border: 2px solid var(--gray-300);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   transition: all var(--transition-fast);
 }
@@ -83,7 +83,7 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 3px rgba(91, 61, 240, 0.1);
 }
 
 .form-input.error,
@@ -165,14 +165,7 @@
 
 .info-card {
   padding: var(--spacing-2xl);
-  border-left: 3px solid transparent;
   transition: all var(--transition-base);
-}
-
-.info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-left-color: var(--primary);
 }
 
 .info-title {
@@ -204,9 +197,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 86, 179, 0.1) 100%);
+  width: 44px;
+  height: 44px;
+  background: rgba(91, 61, 240, 0.08);
   border-radius: var(--radius-lg);
   flex-shrink: 0;
 }

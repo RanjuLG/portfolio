@@ -2,12 +2,17 @@
   <!-- Introduction Section -->
   <section class="about-intro section">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h1 class="section-title text-gradient">About Me</h1>
-        <p class="section-subtitle">Get to know more about my skills, experience, and background</p>
+      <div class="editorial-header" data-aos="fade-up">
+        <h1 class="editorial-title">about me</h1>
+        <p class="editorial-caption">01 &middot; skills, experience &amp; background</p>
       </div>
-      <div class="intro-content" data-aos="fade-up" data-aos-delay="100">
-        <p class="intro-text" [innerHTML]="introduction"></p>
+      <div class="intro-layout">
+        <div class="intro-photo" data-aos="fade-right">
+          <img src="me.webp" [alt]="config.personal.name" width="320" height="320" loading="lazy" />
+        </div>
+        <div class="intro-content" data-aos="fade-up" data-aos-delay="100">
+          <p class="intro-text" [innerHTML]="introduction"></p>
+        </div>
       </div>
     </div>
   </section>
@@ -30,8 +35,8 @@
               <path [attr.d]="skillGroup.icon" fill="url(#skillGrad)" />
               <defs>
                 <linearGradient id="skillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color: #007bff" />
-                  <stop offset="100%" style="stop-color: #0056b3" />
+                  <stop offset="0%" style="stop-color: #5b3df0" />
+                  <stop offset="100%" style="stop-color: #4527d1" />
                 </linearGradient>
               </defs>
             </svg>
@@ -52,82 +57,89 @@
   <section class="timeline-section section-sm">
     <div class="container">
       <h2 class="content-title">Professional Experience</h2>
-      <div class="timeline experience-timeline">
+      <div class="zigzag-timeline zigzag-wide">
         @for (item of experience; track item.title + item.duration; let idx = $index) {
-        <div class="timeline-item" [class.current]="item.isCurrent">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content card" data-aos="fade-left" [attr.data-aos-delay]="idx * 100">
-            <div class="timeline-header">
-              @if (item.logo) {
-              <div class="company-logo">
-                <img [src]="item.logo" [alt]="item.logoAlt || item.subtitle" loading="lazy" />
-              </div>
-              }
-              <div class="timeline-header-content">
-                <div class="timeline-title-row">
-                  <h3 class="timeline-title">{{ item.title }}</h3>
-                </div>
-                <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
-                <div class="experience-meta">
-                  <span class="timeline-duration badge badge-secondary">{{ formatDuration(item) }}</span>
-                  @if (item.location) {
-                  <span class="meta-chip">{{ item.location }}</span>
-                  }
-                  @if (item.assignment) {
-                  <span class="meta-chip meta-chip-highlight">{{ item.assignment }}</span>
-                  }
-                </div>
-              </div>
-            </div>
+        <div
+          class="zigzag-item"
+          [class.zigzag-reverse]="idx % 2 === 1"
+          [class.is-current]="item.isCurrent"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="idx * 80"
+        >
+          <div class="zigzag-time">
+            <span class="zigzag-time-value">{{ formatDuration(item) }}</span>
+            @if (item.location) {
+            <span class="zigzag-time-sub">{{ item.location }}</span>
+            }
+          </div>
 
-            <p class="timeline-description">{{ item.description }}</p>
+          <div class="zigzag-node">
+            @if (item.logo) {
+            <span class="zigzag-node-circle has-photo">
+              <img [src]="item.logo" [alt]="item.logoAlt || item.subtitle" loading="lazy" />
+            </span>
+            } @else {
+            <span class="zigzag-node-circle"></span>
+            }
+          </div>
 
-            @if (item.technologies && item.technologies.length > 0) {
-            <div class="role-tech-stack">
-              @for (tech of item.technologies; track tech) {
-              <span class="badge badge-tech">{{ tech }}</span>
-              }
-            </div>
+          <div class="zigzag-content">
+            <h3 class="zigzag-title">{{ item.title }}</h3>
+            <h4 class="zigzag-subtitle">{{ item.subtitle }}</h4>
+            @if (item.assignment) {
+            <span class="badge badge-primary zigzag-assignment">{{ item.assignment }}</span>
             }
 
-            <div class="timeline-sections">
-              @if (item.details && item.details.length > 0) {
-              <div class="static-section">
-                <h5 class="details-heading">Key Responsibilities</h5>
-                <ul class="details-list">
-                  @for (detail of item.details; track detail) {
-                  <li>{{ detail }}</li>
-                  }
-                </ul>
+            <div class="zigzag-body">
+              <p class="zigzag-description">{{ item.description }}</p>
+
+              @if (item.technologies && item.technologies.length > 0) {
+              <div class="role-tech-stack">
+                @for (tech of item.technologies; track tech) {
+                <span class="badge badge-tech">{{ tech }}</span>
+                }
               </div>
-              } @if (item.projects && item.projects.length > 0) {
-              <div class="static-section">
-                <h5 class="details-heading">Key Projects</h5>
-                <div class="projects-list">
-                  @for (project of item.projects; track project) {
-                  <div class="project-item">
-                    <h6 class="project-name">{{ parseProject(project).name }}</h6>
-                    @if (parseProject(project).technologies.length > 0) {
-                    <div class="project-tech-stack">
-                      @for (tech of parseProject(project).technologies; track tech) {
-                      <span class="badge badge-sm">{{ tech }}</span>
+              }
+
+              <div class="timeline-sections">
+                @if (item.details && item.details.length > 0) {
+                <div class="static-section">
+                  <h5 class="details-heading">Key Responsibilities</h5>
+                  <ul class="details-list">
+                    @for (detail of item.details; track detail) {
+                    <li>{{ detail }}</li>
+                    }
+                  </ul>
+                </div>
+                } @if (item.projects && item.projects.length > 0) {
+                <div class="static-section">
+                  <h5 class="details-heading">Key Projects</h5>
+                  <div class="projects-list">
+                    @for (project of item.projects; track project) {
+                    <div class="project-item">
+                      <h6 class="project-name">{{ parseProject(project).name }}</h6>
+                      @if (parseProject(project).technologies.length > 0) {
+                      <div class="project-tech-stack">
+                        @for (tech of parseProject(project).technologies; track tech) {
+                        <span class="badge badge-sm">{{ tech }}</span>
+                        }
+                      </div>
                       }
                     </div>
                     }
                   </div>
-                  }
                 </div>
+                } @if (item.clients && item.clients.length > 0) {
+                <div class="static-section">
+                  <h5 class="details-heading">Major Clients</h5>
+                  <ul class="details-list">
+                    @for (client of item.clients; track client) {
+                    <li>{{ client }}</li>
+                    }
+                  </ul>
+                </div>
+                }
               </div>
-              } @if (item.clients && item.clients.length > 0) {
-              <div class="static-section">
-                <h5 class="details-heading">Major Clients</h5>
-                <ul class="details-list">
-                  @for (client of item.clients; track client) {
-                  <li>{{ client }}</li>
-                  }
-                </ul>
-              </div>
-              }
             </div>
           </div>
         </div>
@@ -140,17 +152,31 @@
   <section class="timeline-section section-sm">
     <div class="container">
       <h2 class="content-title">Education & Certifications</h2>
-      <div class="timeline">
-        @for (item of education; track item.title + item.duration) {
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content card" data-aos="fade-left">
-            <div class="timeline-header">
-              <h3 class="timeline-title">{{ item.title }}</h3>
-              <span class="timeline-duration badge badge-secondary">{{ item.duration }}</span>
+      <div class="zigzag-timeline">
+        @for (item of education; track item.title + item.duration; let idx = $index) {
+        <div
+          class="zigzag-item"
+          [class.zigzag-reverse]="idx % 2 === 1"
+          [class.is-current]="item.duration.includes('Present')"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="idx * 80"
+        >
+          <div class="zigzag-time">
+            <span class="zigzag-time-value">{{ item.duration }}</span>
+          </div>
+
+          <div class="zigzag-node">
+            <span class="zigzag-node-circle"></span>
+          </div>
+
+          <div class="zigzag-content">
+            <h3 class="zigzag-title">{{ item.title }}</h3>
+            <h4 class="zigzag-subtitle">{{ item.subtitle }}</h4>
+            @if (item.description) {
+            <div class="zigzag-body">
+              <p class="zigzag-description">{{ item.description }}</p>
             </div>
-            <h4 class="timeline-subtitle">{{ item.subtitle }}</h4>
-            <p class="timeline-description">{{ item.description }}</p>
+            }
           </div>
         </div>
         }
@@ -177,8 +203,8 @@
             <path d="M14 2V8H20" stroke="white" stroke-width="2" />
             <defs>
               <linearGradient id="resumeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color: #007bff" />
-                <stop offset="100%" style="stop-color: #0056b3" />
+                <stop offset="0%" style="stop-color: #5b3df0" />
+                <stop offset="100%" style="stop-color: #4527d1" />
               </linearGradient>
             </defs>
           </svg>

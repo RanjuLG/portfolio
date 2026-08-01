@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AnalyticsService } from '../../services/analytics.service';
 import { SeoService } from '../../services/seo.service';
 
@@ -8,7 +8,7 @@ import { PROFILE_CONFIG } from '../../config/profile.config';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, CommonModule, NgOptimizedImage],
+  imports: [RouterLink, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
   changeDetection: ChangeDetectionStrategy.OnPush
