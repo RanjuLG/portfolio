@@ -142,7 +142,7 @@ export class AboutComponent {
       title: 'Senior Software Engineer',
       subtitle: 'Maintenance Master Pvt. Ltd.',
       duration: 'June 2026 - Present',
-      startDate: '2026-05-01',
+      startDate: '2026-06-01',
       endDate: 'Present',
       isCurrent: true,
       logo: 'assets/companies/TheMaintenanceMaster.svg',
@@ -161,7 +161,7 @@ export class AboutComponent {
     {
       title: 'Senior Software Engineer',
       subtitle: 'Softvil Technologies Pvt. Ltd.',
-      duration: 'Jan 2026 - Present',
+      duration: 'Jan 2026 - May 2026',
       startDate: '2026-01-01',
       endDate: '2026-05-01',
       isCurrent: true,
