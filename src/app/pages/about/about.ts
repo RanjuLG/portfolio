@@ -97,7 +97,7 @@ export class AboutComponent {
   trackResumeDownload() {
     this.analyticsService.trackEvent('Engagement', 'Click', 'Download Resume (About)');
   }
-  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">2+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
+  protected readonly introduction = `I'm a passionate <span class="highlight">Software Engineer</span> with expertise in building robust web applications. Currently, I am reading for my <span class="highlight">MSc. in Computer Science</span> at the <span class="highlight">Postgraduate Institute of Science, University of Peradeniya</span>, and hold a <span class="highlight">BSc. (Eng) Hons.</span> from the <span class="highlight">Faculty of Engineering, University of Peradeniya</span>. With a strong foundation in both <span class="highlight">frontend and backend technologies</span>, and with <span class="highlight">3+ years of experience</span>, I create seamless digital experiences that solve real-world problems. I thrive in collaborative environments and am constantly learning new technologies to stay at the forefront of software development.`;
 
   protected readonly skills: Skill[] = [
     {
@@ -140,10 +140,30 @@ export class AboutComponent {
   protected readonly experience: TimelineItem[] = [
     {
       title: 'Senior Software Engineer',
-      subtitle: 'Softvil Technologies Pvt. Ltd.',
-      duration: 'Jan 2026 - Present',
-      startDate: '2026-01-01',
+      subtitle: 'Maintenance Master Pvt. Ltd.',
+      duration: 'June 2026 - Present',
+      startDate: '2026-06-01',
       endDate: 'Present',
+      isCurrent: true,
+      logo: 'assets/companies/TheMaintenanceMaster.svg',
+      logoAlt: 'The Maintenance Master',
+      technologies: ['ASP.NET Core Web API', 'C#', '.NET'],
+      description: 'Currently working on building a comprehensive maintenance management platform.',
+      location: 'Remote',
+      details: [
+        'Delivered initial MVP features for the Meter and Work Order Services, translating core business requirements into functional APIs.',
+        'Applied Clean Architecture principles and optimized database queries to ensure the long-term maintainability and performance of the system.',
+      ],
+      projects: [
+        'The Maintenance Master - ASP.NET Core Web API, C#, .NET'
+      ]
+    },
+    {
+      title: 'Senior Software Engineer',
+      subtitle: 'Softvil Technologies Pvt. Ltd.',
+      duration: 'Jan 2026 - May 2026',
+      startDate: '2026-01-01',
+      endDate: '2026-05-01',
       isCurrent: true,
       logo: 'assets/companies/softvil.webp',
       logoAlt: 'Softvil Technologies',

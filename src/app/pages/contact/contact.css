@@ -83,7 +83,7 @@
 .form-textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(91, 61, 240, 0.1);
+  box-shadow: 0 0 0 3px rgba(1, 167, 163, 0.1);
 }
 
 .form-input.error,
@@ -199,7 +199,7 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: rgba(91, 61, 240, 0.08);
+  background: rgba(1, 167, 163, 0.08);
   border-radius: var(--radius-lg);
   flex-shrink: 0;
 }

@@ -104,11 +104,11 @@
 }
 
 .social-link:hover {
-  background: var(--text-primary);
-  border-color: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: none;
+  box-shadow: 0 4px 14px 0 rgba(1, 167, 163, 0.25);
 }
 
 .social-icon {

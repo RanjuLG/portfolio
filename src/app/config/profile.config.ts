@@ -1,7 +1,7 @@
 export const PROFILE_CONFIG = {
   personal: {
     name: 'Ranju Gamage',
-    role: 'Software Engineer',
+    role: 'Senior Software Engineer',
     email: 'ranju@ranjugamage.dev',
     location: 'Sri Lanka'
   },
@@ -11,11 +11,10 @@ export const PROFILE_CONFIG = {
     twitter: ''
   },
   urls: {
-    resume: 'Ranju_Gamage_Resume.pdf',
     baseUrl: 'https://ranjugamage.dev'
   },
   seo: {
-    siteName: 'Ranju Gamage - Software Engineer'
+    siteName: 'Ranju Gamage - Senior Software Engineer'
   },
   availability: {
     status: true,
