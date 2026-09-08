@@ -271,7 +271,11 @@
 }
 
 .zigzag-assignment {
+  display: inline-block;
   margin-top: var(--spacing-xs);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 /* Prose content always reads left-to-right regardless of which side it's on */
@@ -283,25 +287,32 @@
 .zigzag-description {
   font-size: var(--text-sm);
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
 }
 
-/* Tech Stack Badges - inherit the flat mono .badge style */
 .role-tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
-  margin: var(--spacing-md) 0 0;
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--gray-100);
+  margin-bottom: var(--spacing-md);
 }
 
 .badge-tech {
+  font-size: 11px;
   font-weight: 500;
-  color: var(--text-secondary);
-  background: none;
-  border: 1px solid var(--gray-200);
+  padding: 4px 10px;
+  background: rgba(1, 167, 163, 0.1);
+  color: var(--primary);
+  border-radius: 50px;
+  border: 1px solid rgba(1, 167, 163, 0.2);
+  transition: all var(--transition-base);
+}
+
+.badge-tech:hover {
+  background: rgba(1, 167, 163, 0.2);
+  box-shadow: 0 0 8px rgba(1, 167, 163, 0.3);
+  transform: translateY(-1px);
 }
 
 .timeline-sections {
@@ -386,14 +397,21 @@
   gap: var(--spacing-2xs);
 }
 
-.badge-sm {
-  font-size: 10px;
+.project-tech-stack .badge {
+  font-size: 11px;
   font-weight: 500;
-  padding: 2px 8px;
-  background: none;
-  color: var(--text-muted);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--gray-200);
+  padding: 4px 10px;
+  background: rgba(1, 167, 163, 0.1);
+  color: var(--primary);
+  border-radius: 50px;
+  border: 1px solid rgba(1, 167, 163, 0.2);
+  transition: all var(--transition-base);
+}
+
+.project-tech-stack .badge:hover {
+  background: rgba(1, 167, 163, 0.2);
+  box-shadow: 0 0 8px rgba(1, 167, 163, 0.3);
+  transform: translateY(-1px);
 }
 
 /* Resume Section */
