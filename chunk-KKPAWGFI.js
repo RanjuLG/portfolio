@@ -1,0 +1,2 @@
+var e={personal:{name:"Ranju Gamage",role:"Senior Software Engineer",email:"ranju@ranjugamage.dev",location:"Sri Lanka"},social:{github:"https://github.com/RanjuLG",linkedin:"https://linkedin.com/in/ranju-laksahan",twitter:""},urls:{baseUrl:"https://ranjugamage.dev"},seo:{siteName:"Ranju Gamage - Senior Software Engineer"},availability:{status:!0,title:"Currently Available",message:"Open to new opportunities and freelance projects"}};export{e as a};
+//# sourceMappingURL=chunk-KKPAWGFI.js.map
