@@ -100,7 +100,7 @@
   justify-content: center;
   width: 56px;
   height: 56px;
-  background: rgba(91, 61, 240, 0.08);
+  background: rgba(1, 167, 163, 0.08);
   border-radius: var(--radius-lg);
   margin-bottom: var(--spacing-lg);
 }
@@ -398,7 +398,7 @@
 
 /* Resume Section */
 .resume-section {
-  background: rgba(91, 61, 240, 0.04);
+  background: rgba(1, 167, 163, 0.04);
 }
 
 .resume-card {

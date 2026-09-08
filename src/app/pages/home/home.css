@@ -318,8 +318,9 @@
 .social-link:hover {
   transform: translateY(-2px);
   border-color: var(--primary);
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgba(1, 167, 163, 0.25);
 }
 
 .social-icon {
@@ -356,7 +357,7 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: rgba(91, 61, 240, 0.08);
+  background: rgba(1, 167, 163, 0.08);
   border-radius: var(--radius-xl);
   margin-bottom: var(--spacing-lg);
 }

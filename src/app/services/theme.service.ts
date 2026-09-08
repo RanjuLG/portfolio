@@ -47,14 +47,8 @@ export class ThemeService {
       return savedTheme;
     }
 
-    // Fall back to system preference
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return prefersDark ? 'dark' : 'light';
-    }
-
-    // Default to light theme
-    return 'light';
+    // Force dark mode to match Maintenance Master AI vibe
+    return 'dark';
   }
 
   /**
