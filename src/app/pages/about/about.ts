@@ -102,7 +102,7 @@ export class AboutComponent {
   protected readonly skills: Skill[] = [
     {
       category: 'Backend',
-      items: ['C#','.NET', 'ASP.NET','Entity Framework'],
+      items: ['C#','.NET', 'ASP.NET','Entity Framework', 'Micro Services', 'RabbitMQ', 'MassTransit'],
       icon: 'M20 13H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-6c0-.55-.45-1-1-1zM7 19c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20 3H4c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h16c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1zM7 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z'
     },
     {
@@ -112,12 +112,12 @@ export class AboutComponent {
     },
     {
       category: 'Cloud & DevOps',
-      items: ['Azure App Service', 'Azure Functions', 'Azure SQL Database', 'Azure DevOps','GitHub Actions'],
+      items: ['Azure App Service', 'Azure Functions', 'Azure Service Bus', 'Azure DevOps','GitHub Actions'],
       icon: 'M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z'
     },
     {
       category: 'Database',
-      items: ['SQL Server', 'MySQL', 'MongoDB'],
+      items: ['SQL Server', 'PostgreSQL', 'MongoDB'],
       icon: 'M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4zm8 6c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9zm0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3z'
     },
     {
@@ -151,8 +151,9 @@ export class AboutComponent {
       description: 'Currently working on building a comprehensive maintenance management platform.',
       location: 'Remote',
       details: [
-        'Delivered initial MVP features for the Meter and Work Order Services, translating core business requirements into functional APIs.',
-        'Applied Clean Architecture principles and optimized database queries to ensure the long-term maintainability and performance of the system.',
+        'Designed and developed scalable microservices using .NET and Clean Architecture for an enterprise-grade Maintenance Management System.',
+        'Implemented asynchronous, event-driven communication between services using RabbitMQ, MassTransit, and Azure Service Bus.',
+        'Developed REST APIs and integrated backend services with Angular frontend components and Microsoft SQL Server.'
       ],
       projects: [
         'The Maintenance Master - ASP.NET Core Web API, C#, .NET'
