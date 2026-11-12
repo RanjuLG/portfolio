@@ -153,7 +153,7 @@ export class AboutComponent {
       details: [
         'Designed and developed scalable microservices using .NET and Clean Architecture for an enterprise-grade Maintenance Management System.',
         'Implemented asynchronous, event-driven communication between services using RabbitMQ, MassTransit, and Azure Service Bus.',
-        'Developed REST APIs and integrated backend services with Angular frontend components and Microsoft SQL Server.'
+        'Developed REST APIs and integrated backend services with frontend components and Database.'
       ],
       projects: [
         'The Maintenance Master - ASP.NET Core Web API, C#, .NET'
